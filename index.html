@@ -7,13 +7,16 @@
     <meta name="description" content="DCC Production - Agence de production audiovisuelle, réalisation, voix off, doublage, animation et goodies de prestige sous la direction de Sébastien Favette. L'exigence cinématographique au service de votre succès.">
     <title>DCC Production | Accueil, Services & Goodies de Prestige</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/images/Gemini_Generated_Image_1f6tuf1f6tuf1f6t-1.png">
+    
     <!-- Polices et Styles Externes -->
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="index.css" media="screen">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,700,700i,800,800i">
     
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="jquery.js" defer></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer></script>
     
     <!-- Données Structurées JSON-LD -->
     <script type="application/ld+json">
@@ -48,14 +51,28 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
+        .brand-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .brand-logo-text {
-            font-size: 18pt;
+            font-size: 16pt;
             font-weight: 900;
             letter-spacing: 2px;
             background: linear-gradient(180deg, #FFF 0%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0;
+            line-height: 1.1;
         }
 
         .tagline {
@@ -145,7 +162,6 @@
             transform: scale(1.05);
         }
 
-        /* Photo ronde Sébastien Favette */
         .founder-photo {
             width: 160px;
             height: 160px;
@@ -157,7 +173,6 @@
             display: block;
         }
 
-        /* Tableaux de tarifs stylisés */
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
@@ -200,7 +215,6 @@
             text-decoration: underline;
         }
 
-        /* Grille des logos clients */
         .clients-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -286,16 +300,20 @@
     <!-- En-tête / Header -->
     <header class="u-clearfix u-header u-sticky" id="sec-header">
         <div class="u-clearfix u-sheet u-valign-middle" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-            <div>
-                <div class="brand-logo-text">DCC PRODUCTION</div>
-                <div class="tagline">ONE VOICE. ONE DIRECTION. YOUR CHOICE.</div>
-            </div>
+            <a href="#" class="brand-logo-container">
+                <img src="images/images/Gemini_Generated_Image_1f6tuf1f6tuf1f6t-1.png" alt="DCC Production Logo" class="brand-logo-img">
+                <div>
+                    <div class="brand-logo-text">DCC PRODUCTION</div>
+                    <div class="tagline">ONE VOICE. ONE DIRECTION. YOUR CHOICE.</div>
+                </div>
+            </a>
             <nav class="u-menu u-menu-one-level u-offcanvas">
                 <div class="u-nav-container">
                     <ul class="u-nav u-unstyled" style="display: flex; gap: 20px;">
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="color: #FFF;">Accueil</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#services" style="color: #FFF;">Services</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#tarifs" style="color: #FFF;">Tarifs</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#livres" style="color: #D4AF37;">Livres & Amazon</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#clients" style="color: #FFF;">Références</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis" style="color: #FFF;">Avis</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#goodies" style="color: #D4AF37;">Goodies</a></li>
@@ -400,6 +418,32 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Édition & Livres / Intégration Amazon -->
+    <section class="u-clearfix" id="livres" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card" style="text-align: center;">
+                <span style="display: inline-block; background-color: rgba(212, 175, 55, 0.1); border: 1px solid #D4AF37; color: #D4AF37; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">Auto-édition Internationale</span>
+                <h2 style="font-size: 16pt; font-weight: 900; text-transform: uppercase; margin-bottom: 15px;" class="gold-accent">Ouvrages & Manifestes de Sébastien Favette</h2>
+                <p style="font-size: 9.5pt; color: #CCCCCC; line-height: 1.6; margin-bottom: 25px;">
+                    Retrouvez les best-sellers et publications stratégiques disponibles sur Amazon en versions multilingues.
+                </p>
+
+                <!-- Zone d'intégration widget / bannières Amazon -->
+                <div style="background: rgba(0,0,0,0.4); padding: 20px; border-radius: 6px; border: 1px dashed rgba(212,175,55,0.4); margin-bottom: 20px;">
+                    <p style="font-size: 9pt; color: #A0A0A0; margin-bottom: 15px;">Accès direct aux catalogues de publications et liens officiels Amazon :</p>
+                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://www.amazon.fr" target="_blank" rel="noopener noreferrer" class="closing-btn" style="background: #131921; border: 1px solid #FF9900; color: #FF9900; margin: 0; padding: 10px 20px; font-size: 8.5pt;">
+                            📦 Voir "Votre Comm' est invisible" sur Amazon
+                        </a>
+                        <a href="https://www.amazon.fr" target="_blank" rel="noopener noreferrer" class="closing-btn" style="background: #131921; border: 1px solid #FF9900; color: #FF9900; margin: 0; padding: 10px 20px; font-size: 8.5pt;">
+                            📖 Découvrir "Rêves et Cauchemars"
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -567,27 +611,11 @@
         <a id="whatsapp-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20en%20savoir%20plus%20sur%20les%20services%20de%20DCC%20Production%20et%20obtenir%20un%20devis." target="_blank" rel="noopener noreferrer"
            style="background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); border: 1px solid rgba(255,255,255,0.2);">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-right: 8px;">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.933-11.891 3.181-.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.934 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>
-            <span id="whatsapp-text" style="font-size: 8.5pt; letter-spacing: 0.5px;">Discuter avec Daia</span>
+            Discuter avec Daia
         </a>
     </div>
-
-    <!-- Script de Détection Multilingue (FR, EN, ES, IT, DE, JA) -->
-    <script>
-        const userLang = (navigator.language || navigator.userLanguage || "fr").substring(0, 2).toLowerCase();
-        const messages = {
-            fr: "Discuter avec Daia",
-            en: "Chat with Daia",
-            es: "Chatear con Daia",
-            it: "Chatta con Daia",
-            de: "Mit Daia chatten",
-            ja: "Daiaとチャット"
-        };
-        if (messages[userLang]) {
-            document.getElementById("whatsapp-text").innerText = messages[userLang];
-        }
-    </script>
 
 </body>
 </html>
