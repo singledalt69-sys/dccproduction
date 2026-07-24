@@ -82,278 +82,9 @@
             background-color: #0d0d0d !important;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Styles pour l'overlay de démarrage vidéo */
-        .video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000000;
-            z-index: 10000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .video-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .video-overlay-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #youtube-video-overlay {
-            width: 100%;
-            height: 100%;
-        }
-
-        .skip-button {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background-color: rgba(212, 175, 55, 0.9);
-            border: 1px solid #D4AF37;
-            color: #111111;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 9pt;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            z-index: 10001;
-        }
-
-        .skip-button:hover {
-            background-color: #E50914;
-            color: #FFFFFF;
-            transform: scale(1.05);
-        }
-
-        /* Audio Player Styles */
-        .audio-player-container {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 9998;
-            background: rgba(17, 17, 17, 0.95);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 50px;
-            padding: 12px 16px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .audio-player-btn {
-            background-color: #D4AF37;
-            border: none;
-            color: #111111;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
-        }
-
-        .audio-player-btn:hover {
-            background-color: #E50914;
-            color: #FFFFFF;
-            transform: scale(1.1);
-        }
-
-        .audio-player-btn.playing {
-            background-color: #E50914;
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .volume-control input {
-            width: 80px;
-            cursor: pointer;
-        }
-
-        .volume-label {
-            font-size: 7pt;
-            color: #D4AF37;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .music-title {
-            font-size: 7pt;
-            color: #CCCCCC;
-            letter-spacing: 0.5px;
-            margin-left: 8px;
-            max-width: 150px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Styles pour la section Clients - Preuve Sociale */
-        .clients-section {
-            padding: 50px 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(212, 175, 55, 0.05) 50%, rgba(0, 0, 0, 0.5) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .clients-title {
-            text-align: center;
-            font-size: 16pt;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
-        }
-
-        .clients-subtitle {
-            text-align: center;
-            font-size: 8.5pt;
-            color: #CCCCCC;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            align-items: center;
-            justify-items: center;
-        }
-
-        .client-logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            height: 120px;
-            width: 100%;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .client-logo-container:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.6);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .client-logo-container img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            filter: brightness(0.95);
-            transition: filter 0.3s ease;
-        }
-
-        .client-logo-container:hover img {
-            filter: brightness(1.1);
-        }
-
-        /* Container YouTube caché */
-        #youtube-player {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .audio-player-container {
-                bottom: 90px;
-                right: 10px;
-                padding: 10px 12px;
-            }
-
-            .volume-control {
-                display: none;
-            }
-
-            .music-title {
-                display: none;
-            }
-
-            .skip-button {
-                bottom: 20px;
-                right: 20px;
-                padding: 8px 16px;
-                font-size: 8pt;
-            }
-
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .client-logo-container {
-                height: 100px;
-                padding: 15px;
-            }
-
-            .clients-title {
-                font-size: 14pt;
-            }
-        }
     </style>
 </head>
 <body class="u-body u-xl-mode" data-lang="fr">
-    
-    <!-- Overlay Vidéo de Démarrage -->
-    <div class="video-overlay" id="videoOverlay">
-        <div class="video-overlay-container">
-            <div id="youtube-video-overlay"></div>
-        </div>
-        <button class="skip-button" id="skipButton" title="Passer la vidéo">Passer ▶</button>
-    </div>
-
-    <!-- Audio Player -->
-    <div class="audio-player-container" id="audioPlayerContainer">
-        <button class="audio-player-btn" id="playPauseBtn" title="Lire/Arrêter la musique">
-            <span id="playPauseIcon">🔊</span>
-        </button>
-        <div class="music-title" id="musicTitle">DCC Production Theme</div>
-        <div class="volume-control">
-            <span class="volume-label">Volume</span>
-            <input type="range" id="volumeSlider" min="0" max="100" value="50" title="Ajuster le volume">
-        </div>
-    </div>
-
-    <!-- YouTube IFrame API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
     
     <!-- En-tête / Header -->
     <header class="u-clearfix u-header u-sticky" id="sec-header">
@@ -378,44 +109,15 @@
     <section class="u-clearfix" id="carousel-video" style="padding: 40px 0;">
         <div class="u-clearfix u-sheet" style="text-align: center;">
             <div class="custom-card" style="margin-bottom: 30px;">
-                <div style="color: #E50914; font-size: 9pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">MANIFESTO STRATEGICO DCC PRODUCTION</div>
-                <h1 style="font-size: 24pt; font-weight: 900; line-height: 1.1; margin: 0 0 15px 0; text-transform: uppercase;">L'EXCELLENCE AUDIOVISUELLE <span class="red-accent">GLOBALE</span></h1>
-                <p style="font-size: 10pt; color: #CCCCCC; line-height: 1.4; font-weight: 300; max-width: 800px; margin: 0 auto;">Stratégie, production cinématographique et impact international sans compromis pour dominer vos marchés.</p>
+                <div style="color: #E50914; font-size: 9pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">DCC PRODUCTION</div>
+                <h1 style="font-size: 24pt; font-weight: 900; line-height: 1.1; margin: 0 0 15px 0; text-transform: uppercase;">L'EXCELLENCE AUDIOVISUELLE <span class="red-accent">SANS COMPROMIS</span></h1>
+                <p style="font-size: 10pt; color: #CCCCCC; line-height: 1.4; font-weight: 300; max-width: 800px; margin: 0 auto;">Stratégie, production cinématographique et expansion internationale pour dominer vos marchés.</p>
             </div>
 
             <div id="video-container" style="max-width: 900px; margin: 0 auto; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 0 30px rgba(229, 9, 20, 0.2);">
                 <video autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
                     <source src="images/intro-dcc.mp4" type="video/mp4">
                 </video>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Clients - Preuve Sociale -->
-    <section class="clients-section" id="clients">
-        <div class="u-clearfix u-sheet">
-            <h2 class="clients-title gold-accent">Nos Partenaires de Confiance</h2>
-            <p class="clients-subtitle">Des marques leader qui nous font confiance pour leurs productions audiovisuelles</p>
-            
-            <div class="clients-grid">
-                <div class="client-logo-container">
-                    <img src="images/clients/sfr-logo.png" alt="SFR" title="SFR">
-                </div>
-                <div class="client-logo-container">
-                    <img src="images/clients/gites-de-france-logo.png" alt="Gîtes de France" title="Gîtes de France">
-                </div>
-                <div class="client-logo-container">
-                    <img src="images/clients/orthopedie-logo.png" alt="Orthopédie" title="Orthopédie">
-                </div>
-                <div class="client-logo-container">
-                    <img src="images/clients/mister-france-logo.png" alt="Mister France" title="Mister France">
-                </div>
-                <div class="client-logo-container">
-                    <img src="images/clients/canal-plus-logo.png" alt="CANAL+" title="CANAL+">
-                </div>
-                <div class="client-logo-container">
-                    <img src="images/clients/france-tv-logo.png" alt="France.tv" title="France.tv">
-                </div>
             </div>
         </div>
     </section>
@@ -446,12 +148,12 @@
     <footer class="u-align-center u-clearfix u-footer" style="padding: 20px 0; text-align: center;">
         <div class="u-clearfix u-sheet">
             <p style="font-size: 7.5pt; color: #888888; letter-spacing: 1px; margin: 0;">
-                © 2026 DCC PRODUCTION - TOUS DROITS RÉSERVÉS | SIRET EN COURS DE MATRICULATION[cite: 31]
+                © 2026 DCC PRODUCTION - TOUS DROITS RÉSERVÉS | SIRET EN COURS DE MATRICULATION
             </p>
         </div>
     </footer>
 
-    <!-- Widget WhatsApp Multilingue pour Daia (Intégré avec la charte graphique) -->
+    <!-- Widget WhatsApp Multilingue pour Daia -->
     <div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
         <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer"
            style="background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); border: 1px solid rgba(255,255,255,0.2);">
@@ -472,7 +174,7 @@
             es: { text: "Chatear con Daia", msg: "Hola Daia, me gustaría saber más sobre los servicios de DCC Production." },
             it: { text: "Chatta con Daia", msg: "Ciao Daia, vorrei saperne di più sui servizi di DCC Production." },
             de: { text: "Mit Daia chatten", msg: "Hallo Daia, ich möchte mehr über die Dienstleistungen von DCC Production erfahren." },
-            ja: { text: "Daiaとチャット", msg: "こんに���はDaiaさん、DCC Productionのサービスについてもっと知りたいです。" }
+            ja: { text: "Daiaとチャット", msg: "こんにちはDaiaさん、DCC Productionのサービスについてもっと知りたいです。" }
         };
 
         const userLang = (navigator.language || navigator.userLanguage || "fr").substring(0, 2).toLowerCase();
@@ -482,164 +184,6 @@
         const encodedMsg = encodeURIComponent(messages[selectedLang].msg);
         document.getElementById("whatsapp-link").href = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
     </script>
-
-    <!-- YouTube Intro Video & Background Music Script -->
-    <script>
-        let introPlayer;
-        let musicPlayer;
-        let isIntroPlayerReady = false;
-        let isMusicPlayerReady = false;
-
-        const INTRO_VIDEO_ID = 'OcLSbdNf0mU'; // Vidéo Shorts intro
-        const MUSIC_VIDEO_ID = 'TEByHpEmaug'; // Musique de fond
-
-        // Créer les players YouTube
-        function onYouTubeIframeAPIReady() {
-            // Player pour la vidéo intro
-            introPlayer = new YT.Player('youtube-video-overlay', {
-                height: '100%',
-                width: '100%',
-                videoId: INTRO_VIDEO_ID,
-                events: {
-                    'onReady': onIntroPlayerReady,
-                    'onStateChange': onIntroPlayerStateChange
-                },
-                playerVars: {
-                    'controls': 0,
-                    'disablekb': 1,
-                    'fs': 0,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'iv_load_policy': 3,
-                    'autohide': 1
-                }
-            });
-
-            // Player pour la musique de fond (caché)
-            musicPlayer = new YT.Player('youtube-music-player', {
-                height: '0',
-                width: '0',
-                videoId: MUSIC_VIDEO_ID,
-                events: {
-                    'onReady': onMusicPlayerReady,
-                    'onStateChange': onMusicPlayerStateChange
-                },
-                playerVars: {
-                    'controls': 0,
-                    'disablekb': 1,
-                    'fs': 0,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'iv_load_policy': 3
-                }
-            });
-        }
-
-        // Quand la vidéo intro est prête
-        function onIntroPlayerReady(event) {
-            isIntroPlayerReady = true;
-            introPlayer.playVideo();
-        }
-
-        // Gestion des changements d'état de la vidéo intro
-        function onIntroPlayerStateChange(event) {
-            // Quand la vidéo se termine
-            if (event.data == YT.PlayerState.ENDED) {
-                hideVideoOverlay();
-            }
-        }
-
-        // Quand la musique est prête
-        function onMusicPlayerReady(event) {
-            isMusicPlayerReady = true;
-            musicPlayer.setVolume(50);
-            musicPlayer.playVideo();
-        }
-
-        // Gestion des changements d'état de la musique
-        function onMusicPlayerStateChange(event) {
-            const playPauseIcon = document.getElementById('playPauseIcon');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-
-            if (event.data == YT.PlayerState.PLAYING) {
-                playPauseIcon.textContent = '⏸️';
-                playPauseBtn.classList.add('playing');
-            } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-                playPauseIcon.textContent = '🔊';
-                playPauseBtn.classList.remove('playing');
-            }
-
-            // Relancer la musique si elle s'est terminée
-            if (event.data == YT.PlayerState.ENDED) {
-                musicPlayer.seekTo(0);
-                musicPlayer.playVideo();
-            }
-        }
-
-        // Fonction pour masquer l'overlay vidéo
-        function hideVideoOverlay() {
-            const overlay = document.getElementById('videoOverlay');
-            overlay.classList.add('hidden');
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 500);
-        }
-
-        // Bouton pour passer la vidéo
-        document.getElementById('skipButton').addEventListener('click', () => {
-            hideVideoOverlay();
-        });
-
-        // Gestion du bouton Play/Pause de la musique
-        document.getElementById('playPauseBtn').addEventListener('click', () => {
-            if (!isMusicPlayerReady) return;
-            
-            if (musicPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-                musicPlayer.pauseVideo();
-            } else {
-                musicPlayer.playVideo();
-            }
-            updateMusicPlayButton();
-        });
-
-        // Gestion du contrôle de volume
-        document.getElementById('volumeSlider').addEventListener('input', (e) => {
-            if (isMusicPlayerReady && musicPlayer) {
-                musicPlayer.setVolume(e.target.value);
-            }
-        });
-
-        // Mise à jour de l'icône du bouton de musique
-        function updateMusicPlayButton() {
-            const playPauseIcon = document.getElementById('playPauseIcon');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-            
-            if (isMusicPlayerReady && musicPlayer) {
-                if (musicPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-                    playPauseIcon.textContent = '⏸️';
-                    playPauseBtn.classList.add('playing');
-                } else {
-                    playPauseIcon.textContent = '🔊';
-                    playPauseBtn.classList.remove('playing');
-                }
-            }
-        }
-
-        // Permettre à l'utilisateur de passer la vidéo au clic
-        document.addEventListener('click', (e) => {
-            if (e.target.id !== 'skipButton' && !e.target.closest('.skip-button')) {
-                const overlay = document.getElementById('videoOverlay');
-                if (!overlay.classList.contains('hidden')) {
-                    hideVideoOverlay();
-                }
-            }
-        });
-    </script>
-
-    <!-- Container pour le player de musique caché -->
-    <div id="youtube-music-player" style="display: none;"></div>
 
 </body>
 </html>
