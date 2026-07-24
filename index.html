@@ -18,7 +18,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/images/Gemini_Generated_Image_1f6tuf1f6tuf1f6t-1.png">
     
-    <!-- Google Fonts - Typographie épurée et moderne -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -198,7 +198,7 @@
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Services et Manifestes Stratégiques DCC PRODUCTION",
+            "name": "Services, Tarifs et Goodies DCC PRODUCTION",
             "itemListElement": [
               {
                 "@type": "Offer",
@@ -213,23 +213,15 @@
                 "itemOffered": {
                   "@type": "Service",
                   "name": "Arsenal de Production Visuelle & Audiovisuelle",
-                  "description": "Création de films, teasers, badges industriels, chartes graphiques de domination et esthétiques de production cinématographique, références Canal+, France TV, Tour de France."
+                  "description": "Création de films, teasers, badges industriels, chartes graphiques de domination et esthétiques de production cinématographique."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Studio Voix-Off, Doublage & Post-Production",
-                  "description": "Enregistrement studio haut de gamme, doublage multilingue, sound design et montage vidéo aux standards internationaux."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Community Management & Copywriting International",
-                  "description": "Rédaction de manifestes, gestion des réseaux sociaux et tunnels de vente en anglais, français, allemand, espagnol, italien, japonais et multilingue."
+                  "name": "Boutique Goodies & Manifestes",
+                  "description": "Objets dérivés et livres stratégiques de Sébastien Favette."
                 }
               }
             ]
@@ -239,7 +231,7 @@
     }
     </script>
 
-    <!-- Styles CSS mis à jour (Design ultra-pro, épuré, typographie Plus Jakarta Sans, harmonie lumineuse et lisible) -->
+    <!-- Styles CSS -->
     <style>
         body.u-body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -252,7 +244,6 @@
             padding-top: 85px;
         }
 
-        /* Header Fixe et Netlify style */
         .u-header {
             background-color: rgba(15, 17, 21, 0.95) !important;
             backdrop-filter: blur(10px);
@@ -294,8 +285,6 @@
             text-transform: uppercase;
         }
 
-        .gold-accent { color: #38BDF8; } /* Touche moderne / premium cyan-bleu */
-
         .custom-card {
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(23, 27, 34, 0.7);
@@ -307,7 +296,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Navigation active et fluide */
         .u-nav .u-nav-item a.u-nav-link {
             color: #94A3B8 !important;
             transition: color 0.3s;
@@ -322,7 +310,6 @@
             color: #FFFFFF !important;
         }
 
-        /* Bouton WhatsApp Flottant */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -353,7 +340,6 @@
             fill: #FFF;
         }
 
-        /* Lecteur Musical Flottant (Bas Gauche) */
         .music-float-player {
             position: fixed;
             bottom: 30px;
@@ -418,7 +404,6 @@
             display: block;
         }
 
-        /* Style vidéo principale */
         .hero-video-container {
             width: 100%;
             max-width: 800px;
@@ -434,7 +419,76 @@
             aspect-ratio: 16/9;
         }
 
-        /* Footer & Mentions Légales */
+        /* Grille Tarifs */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .price-card {
+            background: rgba(15, 17, 21, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .price-card h3 {
+            font-size: 11pt;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .price-tag {
+            font-size: 16pt;
+            font-weight: 800;
+            color: #38BDF8;
+            margin-bottom: 15px;
+        }
+        .price-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            font-size: 8.5pt;
+            color: #94A3B8;
+            line-height: 1.6;
+        }
+        .price-card ul li::before {
+            content: "✓ ";
+            color: #38BDF8;
+            font-weight: bold;
+        }
+
+        /* Boutique Goodies */
+        .goodies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .goodie-item {
+            background: rgba(15, 17, 21, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .goodie-item h4 {
+            font-size: 10pt;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        .goodie-price {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #38BDF8;
+            margin-bottom: 15px;
+        }
+
         .legal-footer {
             max-width: 900px;
             margin: 40px auto;
@@ -469,7 +523,7 @@
         </audio>
     </div>
 
-    <!-- En-tête / Header -->
+    <!-- Header -->
     <header class="u-clearfix u-header u-sticky" id="sec-header">
         <div class="u-clearfix u-sheet u-valign-middle" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; width: 100%; max-width: 1200px; margin: 0 auto;">
             <a href="#accueil" class="brand-logo-container">
@@ -484,16 +538,18 @@
                     <ul class="u-nav u-unstyled" style="display: flex; gap: 25px; align-items: center; list-style: none; margin: 0; padding: 0;">
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#accueil">Accueil</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#services">Services</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#tarifs">Tarifs</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#goodies">Goodies</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#leadership">Le Fondateur</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#livres">Livres</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis">Avis Google</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis">Avis</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- 1. SECTION ACCUEIL AVEC VIDÉO DU DÉBUT -->
+    <!-- 1. SECTION ACCUEIL (AVEC VIDÉO) -->
     <section class="u-clearfix" id="accueil" style="padding: 40px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card" style="text-align: center;">
@@ -501,10 +557,10 @@
                 <h1 style="font-size: 22pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">Qui sommes-nous ? Pourquoi DCC Production ?</h1>
                 <p style="font-size: 10pt; color: #94A3B8; line-height: 1.7; margin-bottom: 25px;">
                     DCC Production est l'agence de production audiovisuelle et de stratégie de pointe dédiée aux créateurs, entreprises et marques exigeantes. 
-                    Nous ne faisons pas de simple contenu : nous sculptons votre impact, unissons la vision artistique et l'efficacité commerciale internationale, et garantissons un positionnement d'élite.
+                    Nous ne faisons pas de simple contenu : nous sculptons votre impact, unissons la vision artistique et l'efficacité commerciale internationale.
                 </p>
                 
-                <!-- VIDÉO D'ACCUEIL RÉTABLIE -->
+                <!-- VIDÉO D'ACCUEIL -->
                 <div class="hero-video-container">
                     <video controls autoplay muted loop playsinline>
                         <source src="images/video-presentation.mp4" type="video/mp4">
@@ -533,7 +589,88 @@
         </div>
     </section>
 
-    <!-- 3. SECTION LEADERSHIP -->
+    <!-- 3. SECTION TARIFS & CLOSING WHATSAPP -->
+    <section class="u-clearfix" id="tarifs" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card">
+                <span style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">Transparence & Souveraineté</span>
+                <h2 style="font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">Grille Tarifaire Stratégique</h2>
+                <p style="font-size: 9.5pt; color: #94A3B8; margin-bottom: 25px;">Des solutions sur-mesure taillées pour la domination de marché. Validez votre option directement avec Daia.</p>
+                
+                <div class="pricing-grid">
+                    <!-- Pack 1 -->
+                    <div class="price-card">
+                        <div>
+                            <h3>Pôle Audiovisuel & Réalisation</h3>
+                            <div class="price-tag">Sur Devis</div>
+                            <ul>
+                                <li>Film institutionnel & Corporate HD</li>
+                                <li>Étalonnage / Color Grading cinéma</li>
+                                <li>Sound design & Voix off multilingue</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20obtenir%20un%20devis%20pour%20le%20Pôle%20Audiovisuel%20de%20DCC%20Production." target="_blank" class="closing-btn" style="margin-top:20px; font-size:8pt; padding:10px 15px; text-align:center;">Réserver mon audit visuel avec Daia</a>
+                    </div>
+
+                    <!-- Pack 2 -->
+                    <div class="price-card">
+                        <div>
+                            <h3>Growth Engineering & Tunnels</h3>
+                            <div class="price-tag">Sur Devis</div>
+                            <ul>
+                                <li>Architecture des tunnels de vente</li>
+                                <li>Automatisation WhatsApp (Daia)</li>
+                                <li>Copywriting international 19+ langues</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20veux%20scaler%20mon%20business%20avec%20le%20Growth%20Engineering%20DCC." target="_blank" class="closing-btn" style="margin-top:20px; font-size:8pt; padding:10px 15px; text-align:center;">Scaler mon business avec Daia</a>
+                    </div>
+
+                    <!-- Pack 3 -->
+                    <div class="price-card">
+                        <div>
+                            <h3>Direction Stratégique d'Élite</h3>
+                            <div class="price-tag">Sur Devis</div>
+                            <ul>
+                                <li>Accompagnement CEO & Closing haut vol</li>
+                                <li>Stratégie de rupture & rareté</li>
+                                <li>Immersion & structuration globale</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20accéder%20à%20l'accompagnement%20en%20Direction%20Stratégique%20DCC." target="_blank" class="closing-btn" style="margin-top:20px; font-size:8pt; padding:10px 15px; text-align:center;">Sécuriser ma stratégie avec Daia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BOUTIQUE GOODIES -->
+    <section class="u-clearfix" id="goodies" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card">
+                <span style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">Édition & Exclusivités</span>
+                <h2 style="font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">Boutique Goodies & Manifestes DCC</h2>
+                <p style="font-size: 9.5pt; color: #94A3B8; margin-bottom: 20px;">Portez l'étendard de l'exigence et accédez aux ouvrages officiels.</p>
+                
+                <div class="goodies-grid">
+                    <div class="goodie-item">
+                        <h4>Livre "Votre Comm' est invisible"</h4>
+                        <div class="goodie-price">Format International</div>
+                        <p style="font-size: 8pt; color: #94A3B8; margin-bottom: 15px;">Le manifeste incontournable de Sébastien Favette sur Amazon.</p>
+                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20commander%20le%20livre%20de%20Sébastien%20Favette." target="_blank" class="closing-btn" style="font-size: 7.5pt; padding: 8px 12px;">Commander via Daia</a>
+                    </div>
+                    <div class="goodie-item">
+                        <h4>Goodies & Merch Exclusif</h4>
+                        <div class="goodie-price">Édition Limitée</div>
+                        <p style="font-size: 8pt; color: #94A3B8; margin-bottom: 15px;">Accessoires et textiles brandés DCC Production.</p>
+                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20recevoir%20le%20catalogue%20des%20goodies%20DCC." target="_blank" class="closing-btn" style="font-size: 7.5pt; padding: 8px 12px;">Commander via Daia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION LEADERSHIP -->
     <section class="u-clearfix" id="leadership" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card" style="text-align: center;">
@@ -547,7 +684,7 @@
         </div>
     </section>
 
-    <!-- 4. SECTION LIVRES AMAZON -->
+    <!-- 6. SECTION LIVRES AMAZON -->
     <section class="u-clearfix" id="livres" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card" style="text-align: center;">
@@ -563,24 +700,13 @@
         </div>
     </section>
 
-    <!-- 5. SECTION AVIS GOOGLE -->
+    <!-- 7. SECTION AVIS GOOGLE -->
     <section class="u-clearfix" id="avis" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card" style="text-align: center;">
                 <h2 style="font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; color: #FFFFFF;">⭐ Ils nous font confiance (Avis Google)</h2>
                 <!-- Elfsight Google Reviews -->
                 <div class="elfsight-app-8d69563d-5a1e-4c6c-b283-6dc6a0ee4027" data-elfsight-app-lazy></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. SECTION CLOSING -->
-    <section class="u-clearfix" id="contact" style="padding: 20px 0 30px 0;">
-        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <div class="custom-card">
-                <h2 style="font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">Prêt à passer au niveau supérieur ?</h2>
-                <p style="font-size: 9.5pt; color: #94A3B8; margin-bottom: 20px;">Discutez dès maintenant avec Daia pour structurer et lancer votre prochain projet.</p>
-                <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20lancer%20mon%20projet%20avec%20DCC%20Production." target="_blank" class="closing-btn">Lancer votre projet avec Daia</a>
             </div>
         </div>
     </section>
