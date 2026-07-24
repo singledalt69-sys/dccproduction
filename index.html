@@ -7,7 +7,6 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Transitions fluides pour le système de pages indépendantes */
         .page-section {
             display: none;
         }
@@ -30,7 +29,6 @@
                 <span class="text-2xl font-black tracking-wider text-amber-400">DCC PRODUCTION</span>
             </div>
             
-            <!-- Menu de navigation principal (chaque lien bascule vers une page dédiée) -->
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
                 <button onclick="switchPage('home')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_home">Accueil</button>
                 <button onclick="switchPage('services')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_services">Services</button>
@@ -41,7 +39,6 @@
                 <button onclick="switchPage('avis')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_avis">Bewertungen</button>
             </nav>
 
-            <!-- Sélecteur de langue -->
             <div class="flex items-center space-x-4">
                 <select id="lang-switch" onchange="changeLanguage(this.value)" class="bg-gray-900 border border-amber-500/40 text-amber-400 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500">
                     <option value="fr">FR</option>
@@ -56,27 +53,27 @@
         </div>
     </header>
 
-    <!-- Contenu Principal : Architecture Multi-Pages (Une vue active à la fois) -->
+    <!-- Contenu Principal -->
     <main class="flex-grow">
 
-        <!-- PAGE 1 : ACCUEIL (home) -->
-        <section id="page-home" class="page-section active py-16">
+        <!-- PAGE 1 : ACCUEIL (Style épuré sans cadre gris, conforme à la référence) -->
+        <section id="page-home" class="page-section active py-24">
             <div class="max-w-5xl mx-auto px-4 text-center">
-                <span class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest mb-6" data-i18n="badge_top">Cinematografische Exzellenz & Absolute Souveränität</span>
-                <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6" data-i18n="main_title">Das Visuelle Arsenal, das die Konkurrenz zerschlägt</h1>
-                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10" data-i18n="main_desc">Wenden Sie die 80/20-Regel an: Eliminieren Sie Lärm und konvertieren Sie Leads.</p>
+                <span class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-8" data-i18n="badge_top">Excellence Cinématographique & Souveraineté Absolue</span>
+                <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 leading-tight" data-i18n="main_title">L'Arsenal Visuel Qui Écrase la Concurrence</h1>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-12" data-i18n="main_desc">Appliquez la règle des 80/20 : éliminez le bruit et convertissez vos prospects cibles.</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <button onclick="switchPage('tarifs')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="cta_main">Sichern Sie sich Ihre Führungsposition</button>
-                    <a href="https://wa.me/?text=Bonjour%20Daia" target="_blank" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-amber-400 border border-amber-500/30 font-bold px-8 py-4 rounded-xl transition-all" data-i18n="whatsapp_text">Mit Daia chatten</a>
+                    <button onclick="switchPage('tarifs')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="cta_main">Sécuriser votre position de leader</button>
+                    <a href="https://wa.me/?text=Bonjour%20Daia" target="_blank" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-amber-400 border border-amber-500/30 font-bold px-8 py-4 rounded-xl transition-all" data-i18n="whatsapp_text">Discuter avec Daia</a>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 2 : SERVICES (services) -->
+        <!-- PAGE 2 : SERVICES -->
         <section id="page-services" class="page-section py-16">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="srv_title">Audiovisuelle Technik & Growth Funnels</h2>
-                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="srv_desc">Wir entwerfen kinematografische Manifeste und mehrsprachige Verkaufstrichter.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="srv_title">Ingénierie Audiovisuelle & Growth Tunnels</h2>
+                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="srv_desc">Nous concevons des manifestes cinématographiques et des tunnels de vente multilingues.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl">
                         <h3 class="text-xl font-bold text-white mb-3">Manifestes Cinématographiques</h3>
@@ -90,11 +87,11 @@
             </div>
         </section>
 
-        <!-- PAGE 3 : PRIX & TARIFS (tarifs) -->
+        <!-- PAGE 3 : PRIX & TARIFS -->
         <section id="page-tarifs" class="page-section py-16">
             <div class="max-w-6xl mx-auto px-4">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="tarifs_title">Investissement & Souveraineté</h2>
-                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="tarifs_desc">Keine Kompromisse. Elitelösungen für absolute Exzellenz.</p>
+                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="tarifs_desc">Zéro compromis. Des solutions d'élite pour une domination totale.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
                         <div>
@@ -122,38 +119,38 @@
                     </div>
                 </div>
                 <div class="mt-12 text-center">
-                    <button onclick="switchPage('services')" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="tarifs_cta">Strategische Sitzung buchen</button>
+                    <button onclick="switchPage('services')" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="tarifs_cta">Réserver une session stratégique</button>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 4 : SHOP & GOODIES (goodies) -->
+        <!-- PAGE 4 : SHOP & GOODIES -->
         <section id="page-goodies" class="page-section py-16">
             <div class="max-w-6xl mx-auto px-4 text-center">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="goodies_title">Shop & Limitierte Editionen</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="goodies_desc">Exklusives Zubehör im DCC Production Design.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="goodies_title">Shop & Éditions Limitées</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="goodies_desc">Accessoires exclusifs au design DCC Production.</p>
                 <div class="bg-gray-900 border border-amber-500/20 p-12 rounded-2xl max-w-xl mx-auto">
                     <p class="text-gray-400">Boutique en ligne en cours de déploiement. Restez connectés pour les éditions limitées.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 5 : LE FONDATEUR (leadership) -->
+        <!-- PAGE 5 : LE FONDATEUR -->
         <section id="page-leadership" class="page-section py-16">
             <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="lead_title">Der Gründer - Vision & Strategie</h2>
-                <p class="text-center text-gray-300 mb-12" data-i18n="lead_desc">Kompromisslose strategische Führung.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="lead_title">Le Fondateur - Vision & Stratégie</h2>
+                <p class="text-center text-gray-300 mb-12" data-i18n="lead_desc">Direction stratégique sans concessions.</p>
                 <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl text-gray-300 space-y-4">
                     <p>Fondateur de DCC Production, producteur audiovisuel et stratège international, Sébastien insuffle une vision axée sur la souveraineté absolue et l'efficacité de l'élite entrepreneuriale.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 6 : LIVRES & PUBLICATIONS (livres) -->
+        <!-- PAGE 6 : LIVRES & PUBLICATIONS -->
         <section id="page-livres" class="page-section py-16">
             <div class="max-w-5xl mx-auto px-4 text-center">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="books_title">Publicaciones Internacionales</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="books_desc">Obras de referencia y ediciones globales en Amazon.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="books_title">Publications Internationales</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="books_desc">Ouvrages de référence et éditions globales sur Amazon.</p>
                 <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl max-w-2xl mx-auto">
                     <h3 class="text-xl font-bold text-white mb-2">Votre Comm' est invisible : comment en sortir ?</h3>
                     <p class="text-gray-400 text-sm">Disponible sur Amazon en éditions multilingues (Français, Anglais, Espagnol, Allemand, Italien).</p>
@@ -161,11 +158,11 @@
             </div>
         </section>
 
-        <!-- PAGE 7 : AVIS & RETOURS (avis) -->
+        <!-- PAGE 7 : AVIS & RETOURS -->
         <section id="page-avis" class="page-section py-16">
             <div class="max-w-5xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="avis_title">Opiniones de Líderes</h2>
-                <p class="text-center text-gray-300 mb-12" data-i18n="avis_desc">Impacto inmediato en su crecimiento.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="avis_title">Avis & Retours d'Expérience</h2>
+                <p class="text-center text-gray-300 mb-12" data-i18n="avis_desc">Ce que disent les dirigeants et partenaires.</p>
                 <!-- Widget Elfsight Google Reviews -->
                 <script src="https://elfsightcdn.com/platform.js" async></script>
                 <div class="elfsight-app-8d69563d-5a1e-4c6c-b283-6dc6a0ee4027" data-elfsight-app-lazy></div>
@@ -177,18 +174,17 @@
     <!-- Pied de Page Uniforme -->
     <footer class="bg-gray-900 border-t border-amber-500/20 py-8 mt-16 text-center text-sm text-gray-400">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>© DCC Production. Tous droits réservés.</p>
+            <p>© 2026 DCC PRODUCTION. Tous droits réservés.</p>
             <div class="flex space-x-6">
-                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_legal">Aviso Legal</span>
-                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_rgpd">Política de Privacidad (RGPD)</span>
-                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_cgv">Condiciones de Venta</span>
+                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_legal">Mentions Légales</span>
+                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_rgpd">Politique de Confidentialité (RGPD)</span>
+                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_cgv">Conditions Générales de Vente (CGV)</span>
             </div>
         </div>
     </footer>
 
-    <!-- Moteur JavaScript pour le Routage des Pages & Localisation -->
+    <!-- Moteur JavaScript -->
     <script>
-        // Système de changement de page dynamique par manipulation de classe active
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(section => {
                 section.classList.remove('active');
@@ -200,7 +196,6 @@
             }
         }
 
-        // Dictionnaire complet des traductions (FR, EN, ES, DE, PT, IT, JA)
         const translations = {
             fr: {
                 nav_home: "Accueil", nav_services: "Services", nav_tarifs: "Prix", nav_goodies: "Shop", nav_leadership: "Le Fondateur", nav_livres: "Bücher", nav_avis: "Bewertungen",
@@ -215,11 +210,7 @@
                 lead_title: "Le Fondateur - Vision & Stratégie", lead_desc: "Direction stratégique sans concessions.",
                 books_title: "Publications Internationales", books_desc: "Ouvrages de référence et éditions globales sur Amazon.",
                 avis_title: "Avis & Retours d'Expérience", avis_desc: "Ce que disent les dirigeants et partenaires.",
-                rgpd_text: "🔒 DCC Production utilise des traceurs sous le RGPD.",
-                rgpd_more: "En savoir plus", rgpd_accept: "Accepter & Fermer",
-                footer_legal: "Mentions Légales", footer_rgpd: "Politique de Confidentialité (RGPD)", footer_cgv: "Conditions de Venta",
-                rgpd_full_desc: "Conforme au RGPD, vos données sont strictement sécurisées.",
-                cgv_full_desc: "Engagement contractuel ferme."
+                footer_legal: "Mentions Légales", footer_rgpd: "Politique de Confidentialité (RGPD)", footer_cgv: "Conditions Générales de Vente (CGV)"
             },
             en: {
                 nav_home: "Home", nav_services: "Services", nav_tarifs: "Pricing", nav_goodies: "Shop", nav_leadership: "The Founder", nav_livres: "Books", nav_avis: "Reviews",
@@ -234,11 +225,7 @@
                 lead_title: "The Founder - Vision & Strategy", lead_desc: "Uncompromising strategic leadership.",
                 books_title: "International Publications", books_desc: "Reference books and global editions on Amazon.",
                 avis_title: "Leader Testimonials", avis_desc: "Immediate impact on your growth.",
-                rgpd_text: "🔒 DCC Production uses trackers under GDPR.",
-                rgpd_more: "Learn more", rgpd_accept: "Accept & Close",
-                footer_legal: "Legal Notice", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Terms of Sale",
-                rgpd_full_desc: "In compliance with GDPR, your data is strictly secured.",
-                cgv_full_desc: "Firm contractual commitment."
+                footer_legal: "Legal Notice", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Terms of Sale"
             },
             es: {
                 nav_home: "Inicio", nav_services: "Servicios", nav_tarifs: "Precios", nav_goodies: "Tienda", nav_leadership: "El Fundador", nav_livres: "Libros", nav_avis: "Reseñas",
@@ -253,11 +240,7 @@
                 lead_title: "El Fundador - Visión & Estrategia", lead_desc: "Liderazgo estratégico sin concesiones.",
                 books_title: "Publicaciones Internacionales", books_desc: "Obras de referencia y ediciones globales en Amazon.",
                 avis_title: "Opiniones de Líderes", avis_desc: "Impacto inmediato en su crecimiento.",
-                rgpd_text: "🔒 DCC Production utiliza rastreadores bajo el RGPD.",
-                rgpd_more: "Saber más", rgpd_accept: "Aceptar y Cerrar",
-                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidad (RGPD)", footer_cgv: "Condiciones de Venta",
-                rgpd_full_desc: "Conforme al RGPD, sus datos están estrictamente asegurados.",
-                cgv_full_desc: "Compromiso contractual firme."
+                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidad (RGPD)", footer_cgv: "Condiciones de Venta"
             },
             de: {
                 nav_home: "Startseite", nav_services: "Dienstleistungen", nav_tarifs: "Preise", nav_goodies: "Shop", nav_leadership: "Der Gründer", nav_livres: "Bücher", nav_avis: "Bewertungen",
@@ -272,11 +255,7 @@
                 lead_title: "Der Gründer - Vision & Strategie", lead_desc: "Kompromisslose strategische Führung.",
                 books_title: "Internationale Publikationen", books_desc: "Referenzbücher und weltweite Amazon-Ausgaben.",
                 avis_title: "Führungs-Testimonials", avis_desc: "Sofortige Auswirkung auf das Wachstum.",
-                rgpd_text: "🔒 DCC Production verwendet Tracker gemäß DSGVO.",
-                rgpd_more: "Mehr erfahren", rgpd_accept: "Akzeptieren & Schließen",
-                footer_legal: "Impressum", footer_rgpd: "Datenschutz (DSGVO)", footer_cgv: "AGB",
-                rgpd_full_desc: "Gemäß DSGVO sind Ihre Daten streng geschützt.",
-                cgv_full_desc: "Unsere Dienstleistungen unterliegen festen vertraglichen Verpflichtungen."
+                footer_legal: "Impressum", footer_rgpd: "Datenschutz (DSGVO)", footer_cgv: "AGB"
             },
             pt: {
                 nav_home: "Início", nav_services: "Serviços", nav_tarifs: "Preços", nav_goodies: "Loja", nav_leadership: "O Fundador", nav_livres: "Livros", nav_avis: "Avaliações",
@@ -291,11 +270,7 @@
                 lead_title: "O Fundador - Visão & Estratégia", lead_desc: "Direção estratégica sem concessões.",
                 books_title: "Publicações Internacionais", books_desc: "Descubra os livros de referência e edições globais na Amazon.",
                 avis_title: "Testemunhos de Líderes", avis_desc: "Impacto imediato no crescimento.",
-                rgpd_text: "🔒 A DCC Production utiliza rastreadores em conformidade com o RGPD.",
-                rgpd_more: "Saber mais", rgpd_accept: "Aceitar & Fechar",
-                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidade (RGPD)", footer_cgv: "Termos de Venda (CGV)",
-                rgpd_full_desc: "Em conformidade com o RGPD, os seus dados recolhidos estão estritamente seguros.",
-                cgv_full_desc: "Os nossos serviços estão sujeitos a um compromisso contratual firme."
+                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidade (RGPD)", footer_cgv: "Termos de Venda (CGV)"
             },
             it: {
                 nav_home: "Home", nav_services: "Servizi", nav_tarifs: "Tariffe", nav_goodies: "Negozio", nav_leadership: "Il Fondatore", nav_livres: "Libri", nav_avis: "Recensioni",
@@ -310,11 +285,7 @@
                 lead_title: "Il Fondatore - Visione & Strategia", lead_desc: "Guida strategica senza compromessi.",
                 books_title: "Pubblicazioni Internazionali", books_desc: "Libri di riferimento ed edizioni globali Amazon.",
                 avis_title: "Testimonianze Leader", avis_desc: "Impatto immediato sulla crescita.",
-                rgpd_text: "🔒 DCC Production utilizza tracker conformi al GDPR.",
-                rgpd_more: "Scopri di più", rgpd_accept: "Accetta & Chiudi",
-                footer_legal: "Note Legali", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Condizioni di Vendita (CGV)",
-                rgpd_full_desc: "In conformità al GDPR, i tuoi dati sono rigorosamente protetti.",
-                cgv_full_desc: "I nostri servizi sono soggetti a un solido impegno contrattuale."
+                footer_legal: "Note Legali", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Condizioni di Vendita (CGV)"
             },
             ja: {
                 nav_home: "ホーム", nav_services: "サービス", nav_tarifs: "料金", nav_goodies: "ショップ", nav_leadership: "創設者", nav_livres: "書籍", nav_avis: "お客様の声",
@@ -329,11 +300,7 @@
                 lead_title: "創設者 - ビジョンと戦略", lead_desc: "妥協のない戦略的統括。",
                 books_title: "国際出版物", books_desc: "Amazonでのグローバル出版物。",
                 avis_title: "リーダーの評価", avis_desc: "成長への即効性を証明。",
-                rgpd_text: "🔒 DCC Productionはお客様のプライバシーを保護します。",
-                rgpd_more: "詳細", rgpd_accept: "同意して閉じる",
-                footer_legal: "法的事項", footer_rgpd: "プライバシーポリシー", footer_cgv: "利用規約",
-                rgpd_full_desc: "データは厳重に保護されます。",
-                cgv_full_desc: "すべてのサービスには厳格な契約が適用されます。"
+                footer_legal: "法的事項", footer_rgpd: "プライバシーポリシー", footer_cgv: "利用規約"
             }
         };
 
