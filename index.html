@@ -1,120 +1,54 @@
 <!DOCTYPE html>
-<html lang="fr" style="font-size: 16px;">
+<html lang="fr" data-lang="fr">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="title" content="DCC PRODUCTION | Agence Audiovisuelle Globale & Stratégie d'Élite">
-    <meta name="description" content="DCC Production : Leader mondial de l'ingénierie audiovisuelle, production cinéma, growth engineering et copywriting international. Solutions globales pour dirigeants d'élite.">
-    <title>DCC Production | L'Exigence Cinématographique</title>
-    
-    <link rel="icon" type="image/png" href="images/images/Gemini_Generated_Image_1f6tuf1f6tuf1f6t-1.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>DCC Production - Cinematographic Excellence & Growth Tunnels</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body.u-body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f1115; background: linear-gradient(135deg, #0f1115 0%, #171b22 100%); color: #E2E8F0; background-attachment: fixed; margin: 0; padding-top: 85px; }
-        .u-header { background-color: rgba(15, 17, 21, 0.95) !important; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
-        .brand-logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: pointer; }
-        .brand-logo-img { height: 42px; width: auto; object-fit: contain; }
-        .brand-logo-text { font-size: 13pt; font-weight: 800; letter-spacing: 1.5px; color: #FFFFFF; margin: 0; }
-        .tagline { font-size: 5pt; letter-spacing: 1.5px; color: #94A3B8; text-transform: uppercase; }
-        .custom-card { border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(23, 27, 34, 0.7); backdrop-filter: blur(10px); padding: 35px; border-radius: 12px; margin: 25px auto; max-width: 900px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
-        .u-nav .u-nav-item a.u-nav-link { color: #94A3B8 !important; transition: color 0.3s; font-size: 9.5pt; font-weight: 600; text-decoration: none; cursor: pointer; }
-        .u-nav .u-nav-item a.u-nav-link:hover, .u-nav .u-nav-item a.u-nav-link.active { color: #FFFFFF !important; }
-        
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; background: #25D366; color: #FFF; display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 50px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); text-decoration: none; font-weight: 700; font-size: 9.5pt; }
-        .whatsapp-float:hover { background: #20ba5a; }
-        .whatsapp-float svg { width: 24px; height: 24px; fill: #FFF; }
-        
-        .music-float-player { position: fixed; bottom: 30px; left: 30px; z-index: 9998; background: rgba(23, 27, 34, 0.95); border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
-        .music-toggle-btn { background: #38BDF8; color: #0F172A; border: none; padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 8pt; cursor: pointer; text-transform: uppercase; }
-        
-        .closing-btn { display: inline-block; background: #38BDF8; color: #0F172A; font-weight: 800; text-transform: uppercase; font-size: 9pt; letter-spacing: 1px; padding: 14px 30px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3); transition: all 0.3s ease; margin-top: 15px; cursor: pointer; border: none; }
-        .closing-btn:hover { background: #7dd3fc; }
-        
-        /* OVERLAY VIDÉO PLEIN ECRAN UNIQUEMENT PREMIÈRE VISITE ACCUEIL */
-        #intro-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
-        .skip-intro-btn { position: absolute; top: 30px; right: 30px; background: rgba(15, 17, 21, 0.8); border: 1px solid rgba(56, 189, 248, 0.5); color: #FFFFFF; padding: 10px 24px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 9pt; cursor: pointer; z-index: 100000; }
-        .skip-intro-btn:hover { background: #38BDF8; color: #0F172A; }
-
-        /* POPUP RGPD INITIAL */
-        #rgpd-popup { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(23, 27, 34, 0.95); border: 1px solid rgba(56, 189, 248, 0.4); padding: 20px; border-radius: 12px; z-index: 99990; max-width: 600px; width: 90%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; }
-        #rgpd-popup p { font-size: 8.5pt; color: #94A3B8; margin: 0 0 15px 0; line-height: 1.5; }
-        .rgpd-actions { display: flex; gap: 10px; justify-content: flex-end; }
-        .rgpd-btn { background: #38BDF8; color: #0F172A; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 8pt; cursor: pointer; text-transform: uppercase; }
-
-        .lang-selector { background: rgba(15, 17, 21, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); color: #FFF; padding: 6px 12px; border-radius: 6px; font-size: 8.5pt; font-weight: 700; cursor: pointer; }
-
-        .legal-footer { max-width: 900px; margin: 40px auto; padding: 20px; text-align: center; font-size: 8.5pt; color: #64748B; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        .legal-footer a { color: #94A3B8; text-decoration: underline; margin: 0 10px; cursor: pointer; }
-
-        /* VUES SPA */
-        .spa-view { display: none; }
-        .spa-view.active-view { display: block; }
+        /* Transitions fluides pour le système de pages indépendantes */
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body class="u-body u-xl-mode" data-lang="fr">
-    
-    <!-- OVERLAY VIDÉO INTRODUCTIVE (UNIQUE PREMIÈRE VISITE ACCUEIL) -->
-    <div id="intro-overlay" style="display: none;">
-        <button class="skip-intro-btn" onclick="closeIntro()">Passer l'introduction ➔</button>
-        <div style="width: 100%; height: 100%; max-width: 450px; max-height: 80vh; display: flex; justify-content: center; align-items: center;">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/-3AIXoNUKgE?autoplay=1&mute=0&controls=0&loop=1&playlist=-3AIXoNUKgE" title="DCC Production Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
-        </div>
-    </div>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-gray-950">
 
-    <!-- POP-UP RGPD INITIAL -->
-    <div id="rgpd-popup">
-        <p data-i18n="rgpd_text">🔒 DCC Production utilise des traceurs pour optimiser votre expérience, sécuriser les tunnels de vente et analyser l'audience dans le respect du RGPD. En poursuivant, vous acceptez notre politique de confidentialité.</p>
-        <div class="rgpd-actions">
-            <a onclick="switchView('rgpd')" class="rgpd-btn" style="background: transparent; color: #38BDF8; border: 1px solid #38BDF8; text-decoration: none; display:inline-flex; align-items:center;" data-i18n="rgpd_more">En savoir plus</a>
-            <button class="rgpd-btn" onclick="acceptRgpd()" data-i18n="rgpd_accept">Accepter & Fermer</button>
-        </div>
-    </div>
+    <!-- Navigation Supérieure Multilingue & Routage par Pages -->
+    <header class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-amber-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                <span class="text-2xl font-black tracking-wider text-amber-400">DCC PRODUCTION</span>
+            </div>
+            
+            <!-- Menu de navigation principal (chaque lien bascule vers une page dédiée) -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                <button onclick="switchPage('home')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_home">Accueil</button>
+                <button onclick="switchPage('services')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_services">Services</button>
+                <button onclick="switchPage('tarifs')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_tarifs">Prix</button>
+                <button onclick="switchPage('goodies')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_goodies">Shop</button>
+                <button onclick="switchPage('leadership')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_leadership">Le Fondateur</button>
+                <button onclick="switchPage('livres')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_livres">Bücher</button>
+                <button onclick="switchPage('avis')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_avis">Bewertungen</button>
+            </nav>
 
-    <!-- Bouton WhatsApp Flottant -->
-    <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20veux%20dominer%20mon%20marché%20avec%20DCC%20Production." target="_blank" class="whatsapp-float">
-        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.482 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-        <span data-i18n="whatsapp_text">Discuter avec Daia</span>
-    </a>
-
-    <!-- Lecteur Musical Flottant (Toujours actif, ne se coupe jamais lors de la navigation) -->
-    <div class="music-float-player">
-        <span style="font-size: 8pt; font-weight: 700; color: #38BDF8; text-transform: uppercase;">🎵 Who I Am</span>
-        <button class="music-toggle-btn" id="audio-toggle" onclick="toggleAudio()">Pause</button>
-        <iframe id="youtube-audio-iframe" src="https://www.youtube.com/embed/TEByHpEmaug?autoplay=1" style="display:none;" allow="autoplay"></iframe>
-    </div>
-
-    <!-- Header Multi-Vues avec Sélecteur Multilingue -->
-    <header class="u-clearfix u-header u-sticky" id="sec-header">
-        <div class="u-clearfix u-sheet u-valign-middle" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; width: 100%; max-width: 1200px; margin: 0 auto;">
-            <a onclick="switchView('home')" class="brand-logo-container">
-                <img src="images/images/Gemini_Generated_Image_1f6tuf1f6tuf1f6t-1.png" alt="DCC Production Logo" class="brand-logo-img">
-                <div>
-                    <div class="brand-logo-text">DCC PRODUCTION</div>
-                    <div class="tagline">ONE VOICE. ONE DIRECTION. YOUR CHOICE.</div>
-                </div>
-            </a>
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <nav class="u-menu u-menu-one-level">
-                    <div class="u-nav-container">
-                        <ul class="u-nav u-unstyled" style="display: flex; gap: 15px; align-items: center; list-style: none; margin: 0; padding: 0;">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link active" onclick="switchView('home')" data-i18n="nav_home" id="link-home">Accueil</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" onclick="switchView('services')" data-i18n="nav_services" id="link-services">Services</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" onclick="switchView('tarifs')" data-i18n="nav_tarifs" id="link-tarifs">Tarifs</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" onclick="switchView('goodies')" data-i18n="nav_goodies" id="link-goodies">Boutique</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" onclick="switchView('leadership')" data-i18n="nav_leadership" id="link-leadership">Le Fondateur</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" onclick="switchView('livres')" data-i18n="nav_livres" id="link-livres">Livres</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" onclick="switchView('avis')" data-i18n="nav_avis" id="link-avis">Avis</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <select class="lang-selector" id="lang-switch" onchange="changeLanguage(this.value)">
+            <!-- Sélecteur de langue -->
+            <div class="flex items-center space-x-4">
+                <select id="lang-switch" onchange="changeLanguage(this.value)" class="bg-gray-900 border border-amber-500/40 text-amber-400 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500">
                     <option value="fr">FR</option>
                     <option value="en">EN</option>
                     <option value="es">ES</option>
                     <option value="de">DE</option>
+                    <option value="pt">PT</option>
                     <option value="it">IT</option>
                     <option value="ja">JA</option>
                 </select>
@@ -122,330 +56,299 @@
         </div>
     </header>
 
-    <!-- ================= VUE 1 : ACCUEIL ================= -->
-    <div id="view-home" class="spa-view active-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card" style="text-align: center;">
-                    <span style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;" data-i18n="badge_top">L'Exigence Cinématographique & Souveraineté Absolue</span>
-                    <h1 style="font-size: 24pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;" data-i18n="main_title">L'Arsenal Visuel Qui Écrase La Concurrence</h1>
-                    <p style="font-size: 10pt; color: #94A3B8; line-height: 1.7; margin-bottom: 25px;" data-i18n="main_desc">
-                        Appliquez la règle du 80/20 : éliminez le bruit, dominez l'attention visuelle et convertissez vos prospects à fort potentiel grâce à des tunnels automatisés d'élite.
-                    </p>
-                    <button onclick="switchView('tarifs')" class="closing-btn" data-i18n="cta_main">Sécuriser votre position de leader</button>
+    <!-- Contenu Principal : Architecture Multi-Pages (Une vue active à la fois) -->
+    <main class="flex-grow">
+
+        <!-- PAGE 1 : ACCUEIL (home) -->
+        <section id="page-home" class="page-section active py-16">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <span class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest mb-6" data-i18n="badge_top">Cinematografische Exzellenz & Absolute Souveränität</span>
+                <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6" data-i18n="main_title">Das Visuelle Arsenal, das die Konkurrenz zerschlägt</h1>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10" data-i18n="main_desc">Wenden Sie die 80/20-Regel an: Eliminieren Sie Lärm und konvertieren Sie Leads.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <button onclick="switchPage('tarifs')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="cta_main">Sichern Sie sich Ihre Führungsposition</button>
+                    <a href="https://wa.me/?text=Bonjour%20Daia" target="_blank" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-amber-400 border border-amber-500/30 font-bold px-8 py-4 rounded-xl transition-all" data-i18n="whatsapp_text">Mit Daia chatten</a>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 2 : SERVICES ================= -->
-    <div id="view-services" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 20pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="srv_title">Ingénierie Audiovisuelle & Growth Tunnels</h2>
-                    <p style="color: #94A3B8; line-height: 1.7; font-size: 10pt;" data-i18n="srv_desc">Nous concevons des manifestes cinématographiques et structurons des tunnels de vente multilingues propulsés par intelligence artificielle (Daia WhatsApp) pour convertir avec une précision chirurgicale.</p>
+        <!-- PAGE 2 : SERVICES (services) -->
+        <section id="page-services" class="page-section py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="srv_title">Audiovisuelle Technik & Growth Funnels</h2>
+                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="srv_desc">Wir entwerfen kinematografische Manifeste und mehrsprachige Verkaufstrichter.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Manifestes Cinématographiques</h3>
+                        <p class="text-gray-400 text-sm">Captation haute définition, étalonnage de précision et direction artistique sans concession pour marquer les esprits.</p>
+                    </div>
+                    <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Growth Tunnels & Daia WhatsApp</h3>
+                        <p class="text-gray-400 text-sm">Automatisation intelligente et tunnels de conversion multilingues pilotés par IA pour transformer l'audience en clients fidèles.</p>
+                    </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 3 : TARIFS ================= -->
-    <div id="view-tarifs" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card" style="text-align: center;">
-                    <h2 style="font-size: 20pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="tarifs_title">Investissement & Souveraineté</h2>
-                    <p style="color: #94A3B8; font-size: 10pt; margin-bottom: 25px;" data-i18n="tarifs_desc">Pas de compromis. Des solutions d'élite taillées pour les structures qui exigent l'excellence absolue.</p>
-                    <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20valider%20un%20partenariat%20tarifaire." target="_blank" class="closing-btn" data-i18n="tarifs_cta">Réserver votre session stratégique</a>
+        <!-- PAGE 3 : PRIX & TARIFS (tarifs) -->
+        <section id="page-tarifs" class="page-section py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="tarifs_title">Investissement & Souveraineté</h2>
+                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="tarifs_desc">Keine Kompromisse. Elitelösungen für absolute Exzellenz.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400 mb-2">Social Impact</h3>
+                            <p class="text-gray-400 text-sm mb-4">Montage vertical 9:16 dynamique, sound design et habillage percutant.</p>
+                            <div class="text-2xl font-bold text-white mb-4">129 € <span class="text-sm font-normal text-gray-400">HT</span></div>
+                        </div>
+                        <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Unité</span>
+                    </div>
+                    <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400 mb-2">Pack 5 Vidéos</h3>
+                            <p class="text-gray-400 text-sm mb-4">Le pack complet pour alimenter vos réseaux avec un impact maximal.</p>
+                            <div class="text-2xl font-bold text-white mb-4">500 € <span class="text-sm font-normal text-gray-400">HT</span></div>
+                        </div>
+                        <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Pack Stratégique</span>
+                    </div>
+                    <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400 mb-2">Social Full</h3>
+                            <p class="text-gray-400 text-sm mb-4">Gestion complète, community management et diffusion ciblée.</p>
+                            <div class="text-2xl font-bold text-white mb-4">790 € <span class="text-sm font-normal text-gray-400">/ mois HT</span></div>
+                        </div>
+                        <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Clé en main</span>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <button onclick="switchPage('services')" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="tarifs_cta">Strategische Sitzung buchen</button>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 4 : GOODIES (BOUTIQUE) ================= -->
-    <div id="view-goodies" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 20pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="goodies_title">Boutique & Éditions Limitées</h2>
-                    <p style="color: #94A3B8; font-size: 10pt;" data-i18n="goodies_desc">Retrouvez les accessoires et équipements exclusifs aux couleurs de DCC Production.</p>
+        <!-- PAGE 4 : SHOP & GOODIES (goodies) -->
+        <section id="page-goodies" class="page-section py-16">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="goodies_title">Shop & Limitierte Editionen</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="goodies_desc">Exklusives Zubehör im DCC Production Design.</p>
+                <div class="bg-gray-900 border border-amber-500/20 p-12 rounded-2xl max-w-xl mx-auto">
+                    <p class="text-gray-400">Boutique en ligne en cours de déploiement. Restez connectés pour les éditions limitées.</p>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 5 : LEADERSHIP ================= -->
-    <div id="view-leadership" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 20pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="lead_title">Le Fondateur - Vision & Stratégie</h2>
-                    <p style="color: #94A3B8; font-size: 10pt; line-height: 1.7;" data-i18n="lead_desc">Ancré dans l'exigence des grands médias et de la production cinématographique, le pilotage stratégique de DCC Production impose une vision sans concession.</p>
+        <!-- PAGE 5 : LE FONDATEUR (leadership) -->
+        <section id="page-leadership" class="page-section py-16">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="lead_title">Der Gründer - Vision & Strategie</h2>
+                <p class="text-center text-gray-300 mb-12" data-i18n="lead_desc">Kompromisslose strategische Führung.</p>
+                <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl text-gray-300 space-y-4">
+                    <p>Fondateur de DCC Production, producteur audiovisuel et stratège international, Sébastien insuffle une vision axée sur la souveraineté absolue et l'efficacité de l'élite entrepreneuriale.</p>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 6 : LIVRES ================= -->
-    <div id="view-livres" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 20pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="books_title">Publications Internationales</h2>
-                    <p style="color: #94A3B8; font-size: 10pt; line-height: 1.7;" data-i18n="books_desc">Découvrez les ouvrages de référence : "Votre Comm' est invisible : comment en sortir ?" et les éditions mondiales Amazon.</p>
+        <!-- PAGE 6 : LIVRES & PUBLICATIONS (livres) -->
+        <section id="page-livres" class="page-section py-16">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="books_title">Publicaciones Internacionales</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="books_desc">Obras de referencia y ediciones globales en Amazon.</p>
+                <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl max-w-2xl mx-auto">
+                    <h3 class="text-xl font-bold text-white mb-2">Votre Comm' est invisible : comment en sortir ?</h3>
+                    <p class="text-gray-400 text-sm">Disponible sur Amazon en éditions multilingues (Français, Anglais, Espagnol, Allemand, Italien).</p>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 7 : AVIS ================= -->
-    <div id="view-avis" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 20pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="avis_title">Retours d'Expérience Dirigeants</h2>
-                    <p style="color: #94A3B8; font-size: 10pt;" data-i18n="avis_desc">Ceux qui appliquent le système témoignent de l'impact immédiat sur leur croissance.</p>
-                </div>
+        <!-- PAGE 7 : AVIS & RETOURS (avis) -->
+        <section id="page-avis" class="page-section py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="avis_title">Opiniones de Líderes</h2>
+                <p class="text-center text-gray-300 mb-12" data-i18n="avis_desc">Impacto inmediato en su crecimiento.</p>
+                <!-- Widget Elfsight Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-8d69563d-5a1e-4c6c-b283-6dc6a0ee4027" data-elfsight-app-lazy></div>
             </div>
         </section>
-    </div>
 
-    <!-- ================= VUE 8 : MENTIONS LÉGALES ================= -->
-    <div id="view-mentions-legales" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 18pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;">Mentions Légales</h2>
-                    <p style="color: #94A3B8; font-size: 9pt; line-height: 1.7;">Raison sociale : DCC Production<br>Siège social : 12 ter route de Bordeaux, 69670 Vaugneray - France<br>Contact : singledalt69@gmail.com</p>
-                </div>
+    </main>
+
+    <!-- Pied de Page Uniforme -->
+    <footer class="bg-gray-900 border-t border-amber-500/20 py-8 mt-16 text-center text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© DCC Production. Tous droits réservés.</p>
+            <div class="flex space-x-6">
+                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_legal">Aviso Legal</span>
+                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_rgpd">Política de Privacidad (RGPD)</span>
+                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_cgv">Condiciones de Venta</span>
             </div>
-        </section>
-    </div>
-
-    <!-- ================= VUE 9 : RGPD ================= -->
-    <div id="view-rgpd" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 18pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="footer_rgpd">Politique de Confidentialité (RGPD)</h2>
-                    <p style="color: #94A3B8; font-size: 9pt; line-height: 1.7;" data-i18n="rgpd_full_desc">Conformément au RGPD, vos données collectées via nos tunnels de vente et interactions WhatsApp sont strictement sécurisées et ne font l'objet d'aucune revente tierce.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ================= VUE 10 : CGV ================= -->
-    <div id="view-cgv" class="spa-view">
-        <section class="u-clearfix" style="padding: 60px 0;">
-            <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-                <div class="custom-card">
-                    <h2 style="font-size: 18pt; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 15px;" data-i18n="footer_cgv">Conditions Générales de Vente</h2>
-                    <p style="color: #94A3B8; font-size: 9pt; line-height: 1.7;" data-i18n="cgv_full_desc">Nos prestations audiovisuelles et stratégiques font l'objet d'un engagement contractuel ferme dès la validation du devis ou du tunnel d'achat.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer Législatif Blindé -->
-    <footer class="legal-footer">
-        <p>© 2026 DCC PRODUCTION. Tous droits réservés.</p>
-        <p>
-            <a onclick="switchView('mentions-legales')" data-i18n="footer_legal">Mentions Légales</a> | 
-            <a onclick="switchView('rgpd')" data-i18n="footer_rgpd">Politique de Confidentialité (RGPD)</a> | 
-            <a onclick="switchView('cgv')" data-i18n="footer_cgv">Conditions Générales de Vente (CGV)</a>
-        </p>
-        <p style="margin-top: 10px; font-size: 7.5pt;">Siège social : 12 ter route de Bordeaux, 69670 Vaugneray - France | Contact : singledalt69@gmail.com</p>
+        </div>
     </footer>
 
-    <!-- SCRIPTS GESTION SPA, INTRO, AUDIO & MULTILINGUISME -->
+    <!-- Moteur JavaScript pour le Routage des Pages & Localisation -->
     <script>
-        // Moteur de routage SPA instantané
-        function switchView(viewId) {
-            document.querySelectorAll('.spa-view').forEach(el => el.classList.remove('active-view'));
-            const target = document.getElementById('view-' + viewId);
-            if(target) {
-                target.classList.add('active-view');
+        // Système de changement de page dynamique par manipulation de classe active
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-            // MAJ classe active sur le menu
-            document.querySelectorAll('.u-nav-link').forEach(el => el.classList.remove('active'));
-            const activeLink = document.getElementById('link-' + viewId);
-            if(activeLink) activeLink.classList.add('active');
         }
 
-        // Gestion de l'intro vidéo : Uniquement à la toute première visite sur l'accueil
-        window.addEventListener('DOMContentLoaded', () => {
-            const isFirstVisit = !localStorage.getItem('dcc_visited');
-            if (isFirstVisit) {
-                const overlay = document.getElementById('intro-overlay');
-                if(overlay) overlay.style.display = 'flex';
-            }
-            if(!localStorage.getItem('rgpd_accepted')) {
-                document.getElementById('rgpd-popup').style.display = 'block';
-            }
-        });
-
-        function closeIntro() {
-            localStorage.setItem('dcc_visited', 'true');
-            const overlay = document.getElementById('intro-overlay');
-            if(overlay) {
-                overlay.style.opacity = '0';
-                setTimeout(() => { overlay.style.display = 'none'; }, 500);
-            }
-        }
-
-        function acceptRgpd() {
-            localStorage.setItem('rgpd_accepted', 'true');
-            document.getElementById('rgpd-popup').style.display = 'none';
-        }
-
-        // Lecteur Audio global persistant
-        let isPlaying = true;
-        function toggleAudio() {
-            const iframe = document.getElementById('youtube-audio-iframe');
-            const btn = document.getElementById('audio-toggle');
-            if (isPlaying) {
-                iframe.src = '';
-                btn.textContent = 'Écouter';
-                isPlaying = false;
-            } else {
-                iframe.src = 'https://www.youtube.com/embed/TEByHpEmaug?autoplay=1';
-                btn.textContent = 'Pause';
-                isPlaying = true;
-            }
-        }
-
-        // Moteur de Multilinguisme adaptatif (FR, EN, ES, DE, IT, JA)
+        // Dictionnaire complet des traductions (FR, EN, ES, DE, PT, IT, JA)
         const translations = {
             fr: {
-                nav_home: "Accueil", nav_services: "Services", nav_tarifs: "Tarifs", nav_goodies: "Boutique", nav_leadership: "Le Fondateur", nav_livres: "Livres", nav_avis: "Avis",
-                badge_top: "L'Exigence Cinématographique & Souveraineté Absolue",
-                main_title: "L'Arsenal Visuel Qui Écrase La Concurrence",
-                main_desc: "Appliquez la règle du 80/20 : éliminez le bruit, dominez l'attention visuelle et convertissez vos prospects à fort potentiel grâce à des tunnels automatisés d'élite.",
+                nav_home: "Accueil", nav_services: "Services", nav_tarifs: "Prix", nav_goodies: "Shop", nav_leadership: "Le Fondateur", nav_livres: "Bücher", nav_avis: "Bewertungen",
+                badge_top: "Excellence Cinématographique & Souveraineté Absolue",
+                main_title: "L'Arsenal Visuel Qui Écrase la Concurrence",
+                main_desc: "Appliquez la règle des 80/20 : éliminez le bruit et convertissez vos prospects cibles.",
                 cta_main: "Sécuriser votre position de leader",
                 whatsapp_text: "Discuter avec Daia",
-                srv_title: "Ingénierie Audiovisuelle & Growth Tunnels", srv_desc: "Nous concevons des manifestes cinématographiques et structurons des tunnels de vente multilingues propulsés par intelligence artificielle (Daia WhatsApp) pour convertir avec une précision chirurgicale.",
-                tarifs_title: "Investissement & Souveraineté", tarifs_desc: "Pas de compromis. Des solutions d'élite taillées pour les structures qui exigent l'excellence absolue.", tarifs_cta: "Réserver votre session stratégique",
-                goodies_title: "Boutique & Éditions Limitées", goodies_desc: "Retrouvez les accessoires et équipements exclusifs aux couleurs de DCC Production.",
-                lead_title: "Le Fondateur - Vision & Stratégie", lead_desc: "Ancré dans l'exigence des grands médias et de la production cinématographique, le pilotage stratégique de DCC Production impose une vision sans concession.",
-                books_title: "Publications Internationales", books_desc: "Découvrez les ouvrages de référence : 'Votre Comm' est invisible : comment en sortir ?' et les éditions mondiales Amazon.",
-                avis_title: "Retours d'Expérience Dirigeants", avis_desc: "Ceux qui appliquent le système témoignent de l'impact immédiat sur leur croissance.",
-                rgpd_text: "🔒 DCC Production utilise des traceurs pour optimiser votre expérience, sécuriser les tunnels de vente et analyser l'audience dans le respect du RGPD. En poursuivant, vous acceptez notre politique de confidentialité.",
+                srv_title: "Ingénierie Audiovisuelle & Growth Tunnels", srv_desc: "Nous concevons des manifestes cinématographiques et des tunnels de vente multilingues.",
+                tarifs_title: "Investissement & Souveraineté", tarifs_desc: "Zéro compromis. Des solutions d'élite pour une domination totale.", tarifs_cta: "Réserver une session stratégique",
+                goodies_title: "Shop & Éditions Limitées", goodies_desc: "Accessoires exclusifs au design DCC Production.",
+                lead_title: "Le Fondateur - Vision & Stratégie", lead_desc: "Direction stratégique sans concessions.",
+                books_title: "Publications Internationales", books_desc: "Ouvrages de référence et éditions globales sur Amazon.",
+                avis_title: "Avis & Retours d'Expérience", avis_desc: "Ce que disent les dirigeants et partenaires.",
+                rgpd_text: "🔒 DCC Production utilise des traceurs sous le RGPD.",
                 rgpd_more: "En savoir plus", rgpd_accept: "Accepter & Fermer",
-                footer_legal: "Mentions Légales", footer_rgpd: "Politique de Confidentialité (RGPD)", footer_cgv: "Conditions Générales de Vente (CGV)",
-                rgpd_full_desc: "Conformément au RGPD, vos données collectées via nos tunnels de vente et interactions WhatsApp sont strictement sécurisées et ne font l'objet d'aucune revente tierce.",
-                cgv_full_desc: "Nos prestations audiovisuelles et stratégiques font l'objet d'un engagement contractuel ferme dès la validation du devis ou du tunnel d'achat."
+                footer_legal: "Mentions Légales", footer_rgpd: "Politique de Confidentialité (RGPD)", footer_cgv: "Conditions de Venta",
+                rgpd_full_desc: "Conforme au RGPD, vos données sont strictement sécurisées.",
+                cgv_full_desc: "Engagement contractuel ferme."
             },
             en: {
-                nav_home: "Home", nav_services: "Services", nav_tarifs: "Pricing", nav_goodies: "Store", nav_leadership: "The Founder", nav_livres: "Books", nav_avis: "Reviews",
-                badge_top: "Cinematic Excellence & Absolute Sovereignty",
+                nav_home: "Home", nav_services: "Services", nav_tarifs: "Pricing", nav_goodies: "Shop", nav_leadership: "The Founder", nav_livres: "Books", nav_avis: "Reviews",
+                badge_top: "Cinematographic Excellence & Absolute Sovereignty",
                 main_title: "The Visual Arsenal That Crushes the Competition",
-                main_desc: "Apply the 80/20 rule: eliminate noise, command visual attention, and convert high-potential leads using elite automated funnels.",
+                main_desc: "Apply the 80/20 rule: eliminate noise and convert high-potential leads.",
                 cta_main: "Secure Your Leadership Position",
                 whatsapp_text: "Chat with Daia",
-                srv_title: "Audiovisual Engineering & Growth Tunnels", srv_desc: "We design cinematic manifestos and structure multilingual sales funnels powered by artificial intelligence (Daia WhatsApp) to convert with surgical precision.",
-                tarifs_title: "Investment & Sovereignty", tarifs_desc: "No compromise. Elite solutions tailored for structures demanding absolute excellence.", tarifs_cta: "Book Your Strategy Session",
-                goodies_title: "Store & Limited Editions", goodies_desc: "Find exclusive accessories and equipment featuring DCC Production branding.",
-                lead_title: "The Founder - Vision & Strategy", lead_desc: "Rooted in the high standards of major media and film production, the strategic direction of DCC Production imposes an uncompromising vision.",
-                books_title: "International Publications", books_desc: "Discover reference books: 'Votre Comm' est invisible' and global Amazon editions.",
-                avis_title: "Leader Testimonials", avis_desc: "Those who apply the system testify to the immediate impact on their growth.",
-                rgpd_text: "🔒 DCC Production uses trackers to optimize your experience, secure sales funnels, and analyze audience under GDPR compliance.",
-                rgpd_more: "Learn More", rgpd_accept: "Accept & Close",
-                footer_legal: "Legal Notice", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Terms of Sale (CGV)",
-                rgpd_full_desc: "In accordance with GDPR, your data collected via sales funnels and WhatsApp interactions is strictly secured.",
-                cgv_full_desc: "Our audiovisual and strategic services are subject to a firm contractual commitment upon quote validation."
+                srv_title: "Audiovisual Engineering & Growth Tunnels", srv_desc: "We design cinematic manifests and multilingual sales funnels.",
+                tarifs_title: "Investment & Sovereignty", tarifs_desc: "No compromises. Elite solutions for absolute excellence.", tarifs_cta: "Book a Strategic Session",
+                goodies_title: "Shop & Limited Editions", goodies_desc: "Exclusive accessories in DCC Production design.",
+                lead_title: "The Founder - Vision & Strategy", lead_desc: "Uncompromising strategic leadership.",
+                books_title: "International Publications", books_desc: "Reference books and global editions on Amazon.",
+                avis_title: "Leader Testimonials", avis_desc: "Immediate impact on your growth.",
+                rgpd_text: "🔒 DCC Production uses trackers under GDPR.",
+                rgpd_more: "Learn more", rgpd_accept: "Accept & Close",
+                footer_legal: "Legal Notice", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Terms of Sale",
+                rgpd_full_desc: "In compliance with GDPR, your data is strictly secured.",
+                cgv_full_desc: "Firm contractual commitment."
             },
             es: {
-                nav_home: "Inicio", nav_services: "Servicios", nav_tarifs: "Tarifas", nav_goodies: "Tienda", nav_leadership: "El Fundador", nav_livres: "Libros", nav_avis: "Opiniones",
-                badge_top: "Excelencia Cinematográfica y Soberanía Absoluta",
-                main_title: "El Arsenal Visual Que Arrasa Con La Competencia",
-                main_desc: "Aplica la regla 80/20: elimina el ruido, domina la atención visual y convierte leads de alto potencial mediante embudos automatizados.",
-                cta_main: "Asegurar Tu Posición De Liderazgo",
-                whatsapp_text: "Hablar con Daia",
-                srv_title: "Ingeniería Audiovisual y Embudos de Crecimiento", srv_desc: "Diseñamos manifiestos cinematográficos y embudos multilingües con IA (Daia WhatsApp) para convertir con precisión quirúrgica.",
-                tarifs_title: "Inversión y Soberanía", tarifs_desc: "Sin compromisos. Soluciones de élite diseñadas para estructuras que exigen excelencia absoluta.", tarifs_cta: "Reservar Sesión Estratégica",
-                goodies_title: "Tienda y Ediciones Limitadas", goodies_desc: "Descubre accesorios y equipos exclusivos de DCC Production.",
-                lead_title: "El Fundador - Visión y Estrategia", lead_desc: "Arraigado en la exigencia de los grandes medios, el pilotaje estratégico impone una visión sin concesiones.",
-                books_title: "Publicaciones Internacionales", books_desc: "Descubre las obras de referencia y ediciones globales en Amazon.",
-                avis_title: "Opiniones de Líderes", avis_desc: "Quienes aplican el sistema certifican el impacto inmediato en su crecimiento.",
-                rgpd_text: "🔒 DCC Production utiliza rastreadores para optimizar su experiencia y asegurar los embudos de venta bajo el RGPD.",
+                nav_home: "Inicio", nav_services: "Servicios", nav_tarifs: "Precios", nav_goodies: "Tienda", nav_leadership: "El Fundador", nav_livres: "Libros", nav_avis: "Reseñas",
+                badge_top: "Excelencia Cinematográfica & Soberanía Absoluta",
+                main_title: "El Arsenal Visual Que Aplasta a la Competencia",
+                main_desc: "Aplique la regla 80/20: elimine el ruido y convierta clientes potenciales.",
+                cta_main: "Asegure su posición de liderazgo",
+                whatsapp_text: "Chatear con Daia",
+                srv_title: "Ingeniería Audiovisual & Growth Tunnels", srv_desc: "Diseñamos manifiestos cinematográficos y embudos de venta multilingües.",
+                tarifs_title: "Inversión & Soberanía", tarifs_desc: "Sin concesiones. Soluciones de élite para la excelencia absoluta.", tarifs_cta: "Reservar sesión estratégica",
+                goodies_title: "Tienda & Ediciones Limitadas", goodies_desc: "Accesorios exclusivos con el diseño de DCC Production.",
+                lead_title: "El Fundador - Visión & Estrategia", lead_desc: "Liderazgo estratégico sin concesiones.",
+                books_title: "Publicaciones Internacionales", books_desc: "Obras de referencia y ediciones globales en Amazon.",
+                avis_title: "Opiniones de Líderes", avis_desc: "Impacto inmediato en su crecimiento.",
+                rgpd_text: "🔒 DCC Production utiliza rastreadores bajo el RGPD.",
                 rgpd_more: "Saber más", rgpd_accept: "Aceptar y Cerrar",
                 footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidad (RGPD)", footer_cgv: "Condiciones de Venta",
                 rgpd_full_desc: "Conforme al RGPD, sus datos están estrictamente asegurados.",
-                cgv_full_desc: "Nuestros servicios están sujetos a un firme compromiso contractual."
+                cgv_full_desc: "Compromiso contractual firme."
             },
             de: {
                 nav_home: "Startseite", nav_services: "Dienstleistungen", nav_tarifs: "Preise", nav_goodies: "Shop", nav_leadership: "Der Gründer", nav_livres: "Bücher", nav_avis: "Bewertungen",
                 badge_top: "Cinematografische Exzellenz & Absolute Souveränität",
-                main_title: "Das Visuelle Arsenal, Das Die Konkurrenz Zerschlägt",
-                main_desc: "Wenden Sie die 80/20-Regel an: Eliminieren Sie Rauschen, beherrschen Sie die visuelle Aufmerksamkeit und konvertieren Sie Leads.",
-                cta_main: "Führungsposition Sichern",
+                main_title: "Das Visuelle Arsenal, das die Konkurrenz zerschlägt",
+                main_desc: "Wenden Sie die 80/20-Regel an: Eliminieren Sie Lärm und konvertieren Sie Leads.",
+                cta_main: "Sichern Sie sich Ihre Führungsposition",
                 whatsapp_text: "Mit Daia chatten",
-                srv_title: "Audiovisuelle Engineering & Growth Tunnels", srv_desc: "Wir konzipieren cinematografische Manifeste und mehrsprachige Verkaufstrichter mit KI.",
-                tarifs_title: "Investition & Souveränität", tarifs_desc: "Keine Kompromisse. Elite-Lösungen für absolute Exzellenz.", tarifs_cta: "Strategiesitzung Buchen",
-                goodies_title: "Shop & Limitierten Editionen", goodies_desc: "Exklusives Zubehör von DCC Production.",
-                lead_title: "Der Gründer - Vision & Strategie", lead_desc: "Ausgerichtet auf höchste mediale und filmische Ansprüche.",
-                books_title: "Internationale Publikationen", books_desc: "Entdecken Sie die Referenzwerke.",
-                avis_title: "Führerbewertungen", avis_desc: "Sofortiger Wachstumseffekt.",
-                rgpd_text: "🔒 DCC Production verwendet Tracker zur DSGVO-konformen Absicherung.",
+                srv_title: "Audiovisuelle Technik & Growth Funnels", srv_desc: "Wir entwerfen kinematografische Manifeste und mehrsprachige Verkaufstrichter.",
+                tarifs_title: "Investition & Souveränität", tarifs_desc: "Keine Kompromisse. Elitelösungen für absolute Exzellenz.", tarifs_cta: "Strategische Sitzung buchen",
+                goodies_title: "Shop & Limitierte Editionen", goodies_desc: "Exklusives Zubehör im DCC Production Design.",
+                lead_title: "Der Gründer - Vision & Strategie", lead_desc: "Kompromisslose strategische Führung.",
+                books_title: "Internationale Publikationen", books_desc: "Referenzbücher und weltweite Amazon-Ausgaben.",
+                avis_title: "Führungs-Testimonials", avis_desc: "Sofortige Auswirkung auf das Wachstum.",
+                rgpd_text: "🔒 DCC Production verwendet Tracker gemäß DSGVO.",
                 rgpd_more: "Mehr erfahren", rgpd_accept: "Akzeptieren & Schließen",
                 footer_legal: "Impressum", footer_rgpd: "Datenschutz (DSGVO)", footer_cgv: "AGB",
-                rgpd_full_desc: "Gemäß DSGVO streng geschützt.", cgv_full_desc: "Vertragliche Verbindlichkeit."
+                rgpd_full_desc: "Gemäß DSGVO sind Ihre Daten streng geschützt.",
+                cgv_full_desc: "Unsere Dienstleistungen unterliegen festen vertraglichen Verpflichtungen."
+            },
+            pt: {
+                nav_home: "Início", nav_services: "Serviços", nav_tarifs: "Preços", nav_goodies: "Loja", nav_leadership: "O Fundador", nav_livres: "Livros", nav_avis: "Avaliações",
+                badge_top: "Excelência Cinematográfica & Soberania Absoluta",
+                main_title: "O Arsenal Visual Que Esmaga a Concorrência",
+                main_desc: "Aplique a regra 80/20: elimine o ruído e converta potenciais clientes através de funis automatizados.",
+                cta_main: "Garantir a Sua Posição de Líder",
+                whatsapp_text: "Conversar com Daia",
+                srv_title: "Engenharia Audiovisual & Growth Tunnels", srv_desc: "Criamos manifestos cinematográficos e funis de vendas multilingues com inteligência artificial.",
+                tarifs_title: "Investimento & Soberania", tarifs_desc: "Sem compromissos. Soluções de elite para excelência absoluta.", tarifs_cta: "Reservar Sessão Estratégica",
+                goodies_title: "Loja & Edições Limitadas", goodies_desc: "Acessórios e equipamentos exclusivos DCC Production.",
+                lead_title: "O Fundador - Visão & Estratégia", lead_desc: "Direção estratégica sem concessões.",
+                books_title: "Publicações Internacionais", books_desc: "Descubra os livros de referência e edições globais na Amazon.",
+                avis_title: "Testemunhos de Líderes", avis_desc: "Impacto imediato no crescimento.",
+                rgpd_text: "🔒 A DCC Production utiliza rastreadores em conformidade com o RGPD.",
+                rgpd_more: "Saber mais", rgpd_accept: "Aceitar & Fechar",
+                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidade (RGPD)", footer_cgv: "Termos de Venda (CGV)",
+                rgpd_full_desc: "Em conformidade com o RGPD, os seus dados recolhidos estão estritamente seguros.",
+                cgv_full_desc: "Os nossos serviços estão sujeitos a um compromisso contratual firme."
             },
             it: {
                 nav_home: "Home", nav_services: "Servizi", nav_tarifs: "Tariffe", nav_goodies: "Negozio", nav_leadership: "Il Fondatore", nav_livres: "Libri", nav_avis: "Recensioni",
                 badge_top: "Eccellenza Cinematografica & Sovranità Assoluta",
-                main_title: "L'Arsenale Visivo Che Distrugge La Concorrenza",
-                main_desc: "Applica la regola 80/20: elimina il rumore, domina l'attenzione visiva e converti lead ad alto potenziale con funnel automatizzati.",
-                cta_main: "Assicura La Tua Leadership",
+                main_title: "L'Arsenale Visivo Che Schiaccia La Concorrenza",
+                main_desc: "Applica la regola 80/20: elimina il rumore e converti contatti ad alto potenziale.",
+                cta_main: "Assicura la tua posizione di leadership",
                 whatsapp_text: "Chatta con Daia",
-                srv_title: "Ingegneria Audiovisiva & Growth Funnel", srv_desc: "Progettiamo manifesti cinematografici e funnel di vendita multilingue.",
-                tarifs_title: "Investimento & Sovranità", tarifs_desc: "Soluzioni d'élite per un'eccellenza assoluta.", tarifs_cta: "Prenota Sessione",
-                goodies_title: "Negozio & Edizioni Limitate", goodies_desc: "Accessori esclusivi DCC Production.",
+                srv_title: "Ingegneria Audiovisiva & Growth Tunnels", srv_desc: "Progettiamo manifesti cinematografici e funnel di vendita multilingue.",
+                tarifs_title: "Investimento & Sovranità", tarifs_desc: "Soluzioni d'élite per un'eccellenza assoluta.", tarifs_cta: "Prenota la tua sessione strategica",
+                goodies_title: "Negozio & Edizioni Limitate", goodies_desc: "Accessori e attrezzature esclusive DCC Production.",
                 lead_title: "Il Fondatore - Visione & Strategia", lead_desc: "Guida strategica senza compromessi.",
-                books_title: "Pubblicazioni Internazionali", books_desc: "Scopri le opere di riferimento.",
-                avis_title: "Recensioni", avis_desc: "Impatto immediato sulla crescita.",
-                rgpd_text: "🔒 DCC Production utilizza tracker nel rispetto del GDPR.",
-                rgpd_more: "Scopri di più", rgpd_accept: "Accetta e Chiudi",
-                footer_legal: "Note Legali", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Termini di Vendita",
-                rgpd_full_desc: "Dati protetti ai sensi del GDPR.", cgv_full_desc: "Impegni contrattuali fermi."
+                books_title: "Pubblicazioni Internazionali", books_desc: "Libri di riferimento ed edizioni globali Amazon.",
+                avis_title: "Testimonianze Leader", avis_desc: "Impatto immediato sulla crescita.",
+                rgpd_text: "🔒 DCC Production utilizza tracker conformi al GDPR.",
+                rgpd_more: "Scopri di più", rgpd_accept: "Accetta & Chiudi",
+                footer_legal: "Note Legali", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Condizioni di Vendita (CGV)",
+                rgpd_full_desc: "In conformità al GDPR, i tuoi dati sono rigorosamente protetti.",
+                cgv_full_desc: "I nostri servizi sono soggetti a un solido impegno contrattuale."
             },
             ja: {
-                nav_home: "ホーム", nav_services: "サービス", nav_tarifs: "料金", nav_goodies: "ショップ", nav_leadership: "創設者", nav_livres: "書籍", nav_avis: "レビュー",
-                badge_top: "映像の卓越性と絶対的主権",
-                main_title: "競合を圧倒するビジュアル・アーセナル",
-                main_desc: "80/20の法則を適用：ノイズを排除し、視覚的注目を支配し、エリート向け自動化ファネルでリードを獲得します。",
-                cta_main: "リーダーシップを確保する",
+                nav_home: "ホーム", nav_services: "サービス", nav_tarifs: "料金", nav_goodies: "ショップ", nav_leadership: "創設者", nav_livres: "書籍", nav_avis: "お客様の声",
+                badge_top: "映画の卓越性と絶対的な主権",
+                main_title: "競合を圧倒するビジュアルアーセナル",
+                main_desc: "80/20の法則を適用し、ノイズを排除して見込み客を自動ファネルでコンバージョン。",
+                cta_main: "リーダーの地位を確保する",
                 whatsapp_text: "Daiaとチャット",
-                srv_title: "映像エンジニアリング＆グロースファネル", srv_desc: "映画のようなマニフェストとAI駆動の多言語ファネルを設計します。",
-                tarifs_title: "投資と主権", tarifs_desc: "妥協のないエリートソリューション。", tarifs_cta: "戦略セッションを予約",
-                goodies_title: "ストア＆限定版", goodies_desc: "DCC Productionの限定アクセサリー。",
-                lead_title: "創設者 - ビジョンと戦略", lead_desc: "妥協のない戦略的統率力。",
-                books_title: "国際出版物", books_desc: "リファレンス書籍をご覧ください。",
-                avis_title: "リーダーの評価", avis_desc: "成長への即座の効果。",
-                rgpd_text: "🔒 DCC ProductionはGDPRに準拠してトラッカーを使用しています。",
+                srv_title: "映像エンジニアリング ＆ グロースファネル", srv_desc: "AIを活用した多言語セールスファネルを構築します。",
+                tarifs_title: "投資と主権", tarifs_desc: "妥協のないエリート向けソリューション。", tarifs_cta: "戦略セッションを予約する",
+                goodies_title: "ショップ ＆ 限定版", goodies_desc: "DCC Production公式限定アクセサリ。",
+                lead_title: "創設者 - ビジョンと戦略", lead_desc: "妥協のない戦略的統括。",
+                books_title: "国際出版物", books_desc: "Amazonでのグローバル出版物。",
+                avis_title: "リーダーの評価", avis_desc: "成長への即効性を証明。",
+                rgpd_text: "🔒 DCC Productionはお客様のプライバシーを保護します。",
                 rgpd_more: "詳細", rgpd_accept: "同意して閉じる",
-                footer_legal: "法的通知", footer_rgpd: "プライバシーポリシー", footer_cgv: "利用規約",
-                rgpd_full_desc: "GDPRに準拠した厳重なデータ管理。", cgv_full_desc: "契約条件の遵守。"
+                footer_legal: "法的事項", footer_rgpd: "プライバシーポリシー", footer_cgv: "利用規約",
+                rgpd_full_desc: "データは厳重に保護されます。",
+                cgv_full_desc: "すべてのサービスには厳格な契約が適用されます。"
             }
         };
 
         function changeLanguage(lang) {
-            localStorage.setItem('dcc_lang', lang);
-            document.documentElement.lang = lang;
-            const t = translations[lang] || translations['fr'];
+            document.body.setAttribute('data-lang', lang);
+            const dict = translations[lang] || translations['fr'];
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (t[key]) el.textContent = t[key];
+                if(dict[key]) {
+                    el.textContent = dict[key];
+                }
             });
+            const sel = document.getElementById('lang-switch');
+            if(sel) sel.value = lang;
         }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('dcc_lang') || 'fr';
-            document.getElementById('lang-switch').value = savedLang;
-            changeLanguage(savedLang);
-        });
     </script>
 </body>
 </html>
