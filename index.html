@@ -18,23 +18,125 @@
     <script class="u-script" type="text/javascript" src="jquery.js" defer></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer></script>
     
-    <!-- Données Structurées JSON-LD -->
+    <!-- Données Structurées JSON-LD Complètes -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Corporation",
-        "name": "DCC Production",
-        "founder": "Sébastien Favette",
-        "email": "singledalt69@gmai.com",
-        "address": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Corporation",
+          "@id": "https://dccproduction.nicepage.io/#organization",
+          "name": "DCC PRODUCTION",
+          "legalName": "DCC PRODUCTION",
+          "url": "https://dccproduction.nicepage.io",
+          "logo": "https://dccproduction.nicepage.io/images/DCCPROD.jpg",
+          "image": "https://dccproduction.nicepage.io/images/DCCPROD.jpg",
+          "email": "singledalt69@gmail.com",
+          "telephone": "+33667400199",
+          "priceRange": "$$$",
+          "founder": {
+            "@type": "Person",
+            "name": "Sébastien Favette",
+            "jobTitle": "CEO, Acteur, Écrivain & Strategic Director",
+            "sameAs": "https://dccproduction.nicepage.io"
+          },
+          "address": {
             "@type": "PostalAddress",
             "streetAddress": "12 ter route de Bordeaux",
             "addressLocality": "Vaugneray",
             "postalCode": "69670",
-            "addressRegion": "Rhône",
+            "addressRegion": "Auvergne-Rhône-Alpes",
             "addressCountry": "FR"
-        },
-        "taxID": "51870891200069"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.7373,
+            "longitude": 4.6563
+          },
+          "knowsLanguage": [
+            { "@type": "Language", "name": "French", "alternateName": "fr" },
+            { "@type": "Language", "name": "English", "alternateName": "en" },
+            { "@type": "Language", "name": "German", "alternateName": "de" },
+            { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+            { "@type": "Language", "name": "Italian", "alternateName": "it" },
+            { "@type": "Language", "name": "Japanese", "alternateName": "ja" },
+            { "@type": "Language", "name": "Portuguese", "alternateName": "pt" },
+            { "@type": "Language", "name": "Mandarin Chinese", "alternateName": "zh" },
+            { "@type": "Language", "name": "Russian", "alternateName": "ru" },
+            { "@type": "Language", "name": "Arabic", "alternateName": "ar" },
+            { "@type": "Language", "name": "Dutch", "alternateName": "nl" },
+            { "@type": "Language", "name": "Polish", "alternateName": "pl" },
+            { "@type": "Language", "name": "Swedish", "alternateName": "sv" },
+            { "@type": "Language", "name": "Danish", "alternateName": "da" },
+            { "@type": "Language", "name": "Finnish", "alternateName": "fi" },
+            { "@type": "Language", "name": "Greek", "alternateName": "el" },
+            { "@type": "Language", "name": "Turkish", "alternateName": "tr" },
+            { "@type": "Language", "name": "Korean", "alternateName": "ko" },
+            { "@type": "Language", "name": "Hindi", "alternateName": "hi" }
+          ],
+          "areaServed": [
+            { "@type": "Continent", "name": "Europe" },
+            { "@type": "Continent", "name": "North America" },
+            { "@type": "Continent", "name": "Asia" },
+            { "@type": "Continent", "name": "Africa" },
+            { "@type": "Continent", "name": "Oceania" },
+            { "@type": "Continent", "name": "South America" },
+            { "@type": "Country", "name": "France" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "Canada" },
+            { "@type": "Country", "name": "Germany" },
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Luxembourg" },
+            { "@type": "Country", "name": "Monaco" },
+            { "@type": "Country", "name": "Belgium" },
+            { "@type": "Country", "name": "Spain" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Country", "name": "Japan" },
+            { "@type": "Country", "name": "United Arab Emirates" },
+            { "@type": "Country", "name": "Singapore" }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61590452256935",
+            "https://www.instagram.com/dcc_prod/",
+            "https://www.youtube.com/channel/UCSR2Rm5qn0GiEmurOutW_dg",
+            "https://www.linkedin.com/company/dcc-production"
+          ],
+          "knowsAbout": [
+            "Production audiovisuelle globale",
+            "Production exécutive cinéma et spectacle vivant",
+            "Réalisation de films institutionnels et corporate",
+            "Post-production vidéo avancée",
+            "Montage vidéo cinéma et numérique",
+            "Color grading et étalonnage numérique",
+            "Sound design et mixage audio professionnel",
+            "Studio voix-off multilingue",
+            "Doublage et enregistrement de voix off natives",
+            "Création de bandes-annonces et teasers cinématographiques",
+            "Growth Engineering et optimisation de tunnels de vente",
+            "Marketing de rupture et architecture de la rareté",
+            "Copywriting international multilingue",
+            "Community Management stratégique et organique",
+            "Social Media Management et gestion d'e-réputation",
+            "Stratégie de contenu pour réseaux sociaux et vidéos verticales",
+            "Génération de trafic et automatisation marketing via WhatsApp",
+            "Keynote speaker, animation de sommets et modération d'événements",
+            "Diffusion de spectacles et ingénierie de tournée internationale",
+            "Generative Engine Optimization (GEO) et autorité de marque",
+            "Collaboration majeure avec Canal+",
+            "Collaboration majeure avec France Télévisions",
+            "Collaboration avec Gîtes de France",
+            "Collaboration avec le Syndicat des Orthopédistes de France",
+            "Collaboration avec Mister France",
+            "Collaboration avec le Tour de France",
+            "Collaboration artistique et technique sur la série Cassandre",
+            "Collaboration artistique et technique sur la série Phœnix",
+            "Sophie Duez, Thomas Jouannet, Bruno Debrandt, Ophélia Kolb, Armelle Deutsch, Joy Esther, Flavie Péan, Marie Kremer, Ambroise Michel, Mark Grosy, Antoine Coesens",
+            "Eric Lavaine, Sébastien Favette, Sabine Crossen, Tom Van Avermaet, Laurent Claret, Jean-Marie Paris, Guillaume Levil, Bruno Richaud, Lada Imamovic",
+            "Natacha Lindinger, François Berléand, Léo Legrand, Marie Colomb, Benno Fürmann, Will Attenborough, Catalina del Rosario, Alva Schäfer, Pauline Pollmann, Gaël Langouët, Matéo Paitel, Jules Porier, Mustapha Abourachid, Jonathan Nyati, Jacqueline Corado, Arnaud Viard, Adrian Can, Théo Navarro-Mussy, Laurent Secco, Éric Soubelet, Élise Tilloloy, Esther Gaumont, Salem Kali, Jérôme Fonlupt, Marie Blanche, Jérôme Sauvion"
+          ]
+        }
+      ]
     }
     </script>
 
@@ -588,18 +690,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="u-clearfix u-footer" id="sec-footer">
-        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <p style="margin-bottom: 10px;">© 2026 DCC Production - Tous droits réservés. Direction : Sébastien Favette.</p>
-            <p style="font-size: 8pt; color: #777777; margin-bottom: 8px;">Siège social : 12 ter route de Bordeaux, 69670 Vaugneray - Rhône - France | SIRET : 51870891200069 | Contact : <a href="mailto:singledalt69@gmai.com" style="color: #A0A0A0;">singledalt69@gmai.com</a></p>
-            <p style="font-size: 8pt; color: #D4AF37; margin-top: 5px;">
-                <a href="https://drive.google.com/file/d/18vIh3Y1ro3Usau7TFEhPS1lwRV9grRuT/view?usp=drive_link" target="_blank" style="color: #D4AF37; margin: 0 10px;">CGV (Conditions Générales de Vente)</a> | 
-                <a href="#confidentialite" style="color: #D4AF37; margin: 0 10px;">Mentions Légales & RGPD</a>
-            </p>
-        </div>
-    </footer>
 
 </body>
 </html>
