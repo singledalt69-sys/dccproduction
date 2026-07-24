@@ -3,9 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="DCC Production, Sébastien Favette, production audiovisuelle, international, global, Lyon, Paris, Londres, New York, Tokyo, Berlin, Madrid, Rome, cinéma, réalisation, stratégie, communication">
-    <meta name="description" content="DCC Production - Agence de production audiovisuelle et stratégie internationale. Création de contenus d'impact global.">
-    <title>DCC Production | Accueil</title>
+    <meta name="keywords" content="DCC Production, Sébastien Favette, production audiovisuelle, international, global, Lyon, Paris, Londres, New York, Tokyo, Berlin, Madrid, Rome, cinéma, réalisation, stratégie, communication, voix off, doublage, animation, speaker, podcast">
+    <meta name="description" content="DCC Production - Agence de production audiovisuelle, réalisation, voix off, doublage et animation de prestige sous la direction de Sébastien Favette. L'exigence cinématographique au service de votre succès.">
+    <title>DCC Production | Accueil & Services Audiovisuels de Prestige</title>
     
     <!-- Polices et Styles Externes -->
     <link rel="stylesheet" href="nicepage.css" media="screen">
@@ -24,14 +24,16 @@
         "founder": "Sébastien Favette",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "12 ter route de Bordeaux",
             "addressLocality": "Vaugneray",
+            "postalCode": "69670",
             "addressRegion": "Rhône",
             "addressCountry": "FR"
         }
     }
     </script>
 
-    <!-- Styles de la charte Manifeste appliqués au site -->
+    <!-- Styles de la charte Manifeste et Tarifs -->
     <style>
         body.u-body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -67,7 +69,6 @@
         .gold-accent { color: #D4AF37; }
         .red-accent { color: #E50914; }
 
-        /* Style des cartes de section inspiré du manifeste */
         .custom-card {
             border: 1px solid #D4AF37;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -78,7 +79,6 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
         }
 
-        /* Conteneur spécifique pour le format Short vertical */
         .short-container {
             position: relative;
             width: 100%;
@@ -99,6 +99,61 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+
+        /* Photo ronde Sébastien Favette */
+        .founder-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #D4AF37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+
+        /* Tableaux de tarifs stylisés */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-table th, .pricing-table td {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 12px;
+            text-align: left;
+            font-size: 9pt;
+        }
+
+        .pricing-table th {
+            background: rgba(212, 175, 55, 0.2);
+            color: #D4AF37;
+            text-transform: uppercase;
+        }
+
+        .pricing-table tr.clickable-row {
+            transition: background 0.2s ease;
+            cursor: pointer;
+        }
+
+        .pricing-table tr.clickable-row:hover {
+            background: rgba(212, 175, 55, 0.15);
+        }
+
+        .pricing-table a.daia-link {
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: color 0.2s;
+        }
+
+        .pricing-table a.daia-link:hover {
+            color: #FFF;
+            text-decoration: underline;
         }
 
         /* Grille des logos clients */
@@ -124,12 +179,6 @@
             transition: all 0.3s ease;
         }
 
-        .client-logo-box:hover {
-            border-color: #D4AF37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-            transform: translateY(-2px);
-        }
-
         .client-logo-box img {
             max-width: 100%;
             max-height: 100%;
@@ -142,7 +191,6 @@
             filter: grayscale(0%) brightness(1);
         }
 
-        /* Bouton de closing direct */
         .closing-btn {
             display: inline-block;
             background: linear-gradient(135deg, #E50914 0%, #b20710 100%);
@@ -184,6 +232,8 @@
                 <div class="u-nav-container">
                     <ul class="u-nav u-unstyled" style="display: flex; gap: 20px;">
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="color: #FFF;">Accueil</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#services" style="color: #FFF;">Services</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#tarifs" style="color: #FFF;">Tarifs</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#clients" style="color: #FFF;">Références</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis" style="color: #FFF;">Avis</a></li>
                     </ul>
@@ -192,19 +242,183 @@
         </div>
     </header>
 
-    <!-- Section Principale : YouTube Short & Introduction -->
-    <section class="u-clearfix" id="carousel-video" style="padding: 40px 0;">
-        <div class="u-clearfix u-sheet" style="text-align: center;">
-            <div class="custom-card" style="margin-bottom: 30px;">
-                <div style="color: #E50914; font-size: 9pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">DCC PRODUCTION</div>
-                <h1 style="font-size: 24pt; font-weight: 900; line-height: 1.1; margin: 0 0 15px 0; text-transform: uppercase;">L'EXCELLENCE AUDIOVISUELLE <span class="red-accent">SANS COMPROMIS</span></h1>
-                <p style="font-size: 10pt; color: #CCCCCC; line-height: 1.4; font-weight: 300; max-width: 800px; margin: 0 auto;">Stratégie, production cinématographique et expansion internationale pour dominer vos marchés.</p>
+    <!-- Section Principale : Hero Short en Plein Écran -->
+    <section class="u-clearfix" id="carousel-video" style="padding: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #000;">
+        <div class="u-clearfix u-sheet" style="text-align: center; width: 100%; max-width: 100%; padding: 20px 0;">
+            
+            <div class="custom-card" style="margin: 0 auto 20px auto; max-width: 800px;">
+                <div style="color: #E50914; font-size: 9pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Propulsez votre image vers le sommet</div>
+                <h1 style="font-size: 22pt; font-weight: 900; line-height: 1.2; margin: 0 0 15px 0; text-transform: uppercase;">L’exigence cinématographique au service de votre succès</h1>
+                <p style="font-size: 10pt; color: #CCCCCC; line-height: 1.5; font-weight: 300; max-width: 800px; margin: 0 auto;">Production audiovisuelle, réalisation, voix off, doublage et animation de prestige.</p>
             </div>
 
-            <!-- Intégration propre du Short YouTube -->
+            <!-- Intégration Short YouTube en Plein Écran Immersif -->
             <div class="short-container">
                 <iframe src="https://www.youtube.com/embed/-3AIXoNUKgE?autoplay=1&mute=1&loop=1&playlist=-3AIXoNUKgE" title="DCC Production Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+        </div>
+    </section>
+
+    <!-- Section Expert & Fondateur -->
+    <section class="u-clearfix" id="fondateur" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card" style="text-align: center;">
+                <img src="images/images/G_MOUSSON_IMGP7155_13032026_HDj.jpg" alt="Sébastien Favette - CEO DCC Production" class="founder-photo">
+                <h2 style="font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 5px;" class="gold-accent">Sébastien Favette</h2>
+                <p style="font-size: 9pt; color: #E50914; font-weight: 700; text-transform: uppercase; margin-bottom: 15px;">CEO DCC PRODUCTION | Acteur - Réalisateur - Producteur</p>
+                
+                <p style="font-size: 9.5pt; color: #DDDDDD; line-height: 1.6; margin-bottom: 15px;">
+                    <strong>8 ans d'expérience. Des standards exigeants.</strong> Une expertise façonnée aux côtés des leaders de l'audiovisuel (Canal+, SFR, France 3). Aujourd'hui, DCC Production met cette excellence au service de votre ambition. Pourquoi pas vous ?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Cœur de Services -->
+    <section class="u-clearfix" id="services" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            
+            <!-- Production & Réalisation -->
+            <div class="custom-card">
+                <h3 style="font-size: 13pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;" class="gold-accent">🎬 Production & Réalisation</h3>
+                <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 9.5pt; color: #CCCCCC; line-height: 1.8;">
+                    <li>° Transformez vos concepts en films captivants.</li>
+                    <li>° Une rigueur cinématographique pour une autorité immédiate.</li>
+                    <li>° De la vision brute à l'impact grand écran.</li>
+                </ul>
+            </div>
+
+            <!-- Voix Off & Doublage -->
+            <div class="custom-card">
+                <h3 style="font-size: 13pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;" class="gold-accent">🎙️ Voix Off & Doublage</h3>
+                <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 9.5pt; color: #CCCCCC; line-height: 1.8;">
+                    <li>° L'art de l'incarnation pour toucher votre audience au cœur.</li>
+                    <li>° Une émotion maîtrisée qui donne vie à vos scripts.</li>
+                    <li>° Standards internationaux (<a href="https://www.imdb.com" target="_blank" style="color: #D4AF37; text-decoration: none;">IMDbPro</a>) pour une crédibilité totale.</li>
+                </ul>
+            </div>
+
+            <!-- Animation & Speaker -->
+            <div class="custom-card">
+                <h3 style="font-size: 13pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px;" class="gold-accent">🎤 Animation & Speaker</h3>
+                <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 9.5pt; color: #CCCCCC; line-height: 1.8;">
+                    <li>° Captez l'attention avec une prestance et une énergie dynamique.</li>
+                    <li>° Un message structuré pour maximiser votre impact en direct.</li>
+                    <li>° Une présence scénique qui convertit votre public.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Niveaux de Performance & Tarifs Audiovisuels (Liens Daia intégrés par tarif) -->
+    <section class="u-clearfix" id="tarifs" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card">
+                <h2 style="font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; text-align: center;" class="gold-accent">Nos Niveaux de Performance (Tarifs HT)</h2>
+                <p style="font-size: 9pt; color: #CCCCCC; text-align: center; margin-bottom: 20px;">
+                    Cliquez sur l'offre de votre choix pour valider votre sélection directement avec Daia.
+                </p>
+
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Niveau / Pack</th>
+                            <th>Prestations Clés</th>
+                            <th>Tarif & Réservation Daia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickable-row" onclick="window.open(this.querySelector('a').href, '_blank')">
+                            <td><strong>1. Impact & Croissance</strong><br>Pack Social Impact (Vidéos Courtes)</td>
+                            <td>Montage rythmé vertical (60s), habillage moderne (sous-titres, zooms), Sound Design & Musique.</td>
+                            <td>À partir de 129 € / vidéo<br><em>(Pack 5 vidéos : 500 €)</em><br><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20réserver%20le%20Pack%20Social%20Impact%20à%20129€/500€%20chez%20DCC%20Production.">Réserver avec Daia ➔</a></td>
+                        </tr>
+                        <tr class="clickable-row" onclick="window.open(this.querySelector('a').href, '_blank')">
+                            <td><strong>2. Sérénité & Performance</strong><br>Community Management (Pack Social Full)</td>
+                            <td>Pack de 5 vidéos/mois, gestion réseaux sociaux (captions, planning), Direction Artistique.</td>
+                            <td>790 € / mois<br><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20opter%20pour%20le%20Pack%20Community%20Management%20Social%20Full%20à%20790€/mois%20chez%20DCC%20Production.">Réserver avec Daia ➔</a></td>
+                        </tr>
+                        <tr class="clickable-row" onclick="window.open(this.querySelector('a').href, '_blank')">
+                            <td><strong>3. Must & Cinéma</strong><br>Pack Teaser & Trailer (Grand Écran)</td>
+                            <td>Script ultra captivant (30-45s), Montage & Étalonnage Premium, Voix off (IMDbPro FR, EN, DE), Mixage Hollywoodien.</td>
+                            <td>À partir de 690 € / vidéo<br><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20commander%20le%20Pack%20Teaser%20%26%20Trailer%20Grand%20Écran%20à%20690€%20chez%20DCC%20Production.">Réserver avec Daia ➔</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services Podcast (Liens Daia intégrés par tarif) -->
+    <section class="u-clearfix" id="podcast" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card">
+                <h2 style="font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 10px;" class="gold-accent">Services Voix Off et Podcast Professionnel</h2>
+                <p style="font-size: 9.5pt; color: #CCCCCC; line-height: 1.6; margin-bottom: 20px;">
+                    Donnez une dimension professionnelle à votre audio avec les solutions DCC Podcast. Nettoyage, mastering conforme Spotify/Apple, et automatisation de diffusion.
+                </p>
+
+                <div style="margin-bottom: 20px; padding: 15px; background: rgba(0,0,0,0.3); border-left: 3px solid #D4AF37;">
+                    <h3 style="font-size: 11pt; font-weight: 700; color: #FFF; margin-bottom: 5px;">PACK "PODCAST MASTER" (À la carte)</h3>
+                    <p style="font-size: 9pt; color: #CCC; margin-bottom: 8px;"><strong>Inclus :</strong> Nettoyage audio complet, montage dynamique, jingles et mastering pro (.WAV / .MP3).</p>
+                    <p style="font-size: 10pt; color: #D4AF37; font-weight: 800;">Tarif : À partir de 149 € HT / épisode (ou Pack 4 épisodes à 490 € HT).</p>
+                    <div style="margin-top: 10px;"><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20commander%20le%20Pack%20Podcast%20Master%20à%20149€/490€%20chez%20DCC%20Production.">💬 Lancer cette offre avec Daia ➔</a></div>
+                </div>
+
+                <div style="padding: 15px; background: rgba(0,0,0,0.3); border-left: 3px solid #E50914;">
+                    <h3 style="font-size: 11pt; font-weight: 700; color: #FFF; margin-bottom: 5px;">PACK "PODCAST BROADCAST" (Audio + CM)</h3>
+                    <p style="font-size: 9pt; color: #CCC; margin-bottom: 8px;"><strong>Inclus :</strong> Tout le Pack Master + Show Notes (titres/descriptions) + Programmation & mise en ligne automatique.</p>
+                    <p style="font-size: 10pt; color: #E50914; font-weight: 800;">Tarif : 690 € HT / mois <em>(Engagement 3 mois).</em></p>
+                    <div style="margin-top: 10px;"><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20souscrire%20au%20Pack%20Podcast%20Broadcast%20à%20690€/mois%20chez%20DCC%20Production.">💬 Lancer cette offre avec Daia ➔</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services Speaker & Animation (Liens Daia intégrés par tarif) -->
+    <section class="u-clearfix" id="speaker" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card">
+                <h2 style="font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 10px;" class="gold-accent">Animation d'exception pour vos événements</h2>
+                <p style="font-size: 9.5pt; color: #CCCCCC; line-height: 1.6; margin-bottom: 20px;">
+                    Dominez la scène avec Sébastien Favette. Prestance, rythme et maîtrise multilingue (FR/EN/DE).
+                </p>
+
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Formule Speaker / Animation</th>
+                            <th>Description & Prestations</th>
+                            <th>Tarif & Réservation Daia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickable-row" onclick="window.open(this.querySelector('a').href, '_blank')">
+                            <td><strong>Pack STARTER IMPACT</strong></td>
+                            <td>Préparation amont (fil conducteur), animation live (timing, intervenants), profil trilingue (FR/EN/DE).</td>
+                            <td>À partir de 950 € / Journée<br><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20réserver%20le%20Pack%20Starter%20Impact%20à%20950€/jour%20chez%20DCC%20Production.">Réserver avec Daia ➔</a></td>
+                        </tr>
+                        <tr class="clickable-row" onclick="window.open(this.querySelector('a').href, '_blank')">
+                            <td><strong>Pack DIGITAL & PODCAST BOOST</strong></td>
+                            <td>Animation live + Contenu exclusif (backstage, vlogs) + Podcast standard + <strong>Voix Off Pro Offerte</strong>.</td>
+                            <td>1,190 € / Journée<br><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20réserver%20le%20Pack%20Digital%20%26%20Podcast%20Boost%20à%201190€/jour%20chez%20DCC%20Production.">Réserver avec Daia ➔</a></td>
+                        </tr>
+                        <tr class="clickable-row" onclick="window.open(this.querySelector('a').href, '_blank')">
+                            <td><strong>Pack ULTIMATE BROADCAST</strong></td>
+                            <td>Package complet : Animation + Podcast Broadcast (Show notes, Ausha/Spotify) + Production Premium Exclusive.</td>
+                            <td>À partir de 690 € / Mois<br><a class="daia-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20souscrire%20au%20Pack%20Ultimate%20Broadcast%20à%20690€/mois%20chez%20DCC%20Production.">Réserver avec Daia ➔</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Feedwind & Flux Social -->
+    <section class="u-clearfix" id="feed" style="padding: 20px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Chargement" data-fw-param="178540/"></script>
         </div>
     </section>
 
@@ -212,33 +426,15 @@
     <section class="u-clearfix" id="clients" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card">
-                <h2 style="text-align: center; font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;" class="gold-accent">Ils font confiance à notre expertise</h2>
+                <h2 style="text-align: center; font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;" class="gold-accent">Déjà plus de 150 entrepreneurs font confiance à DCC Production</h2>
                 
                 <div class="clients-grid">
-                    <!-- Canal+ -->
-                    <div class="client-logo-box">
-                        <img src="images/clients/images.png" alt="Canal+">
-                    </div>
-                    <!-- France Télévisions -->
-                    <div class="client-logo-box">
-                        <img src="images/clients/images1.png" alt="France Télévisions">
-                    </div>
-                    <!-- SFR -->
-                    <div class="client-logo-box">
-                        <img src="images/clients/tlchargement2.png" alt="SFR">
-                    </div>
-                    <!-- Gîtes de France -->
-                    <div class="client-logo-box">
-                        <img src="images/clients/tlchargement3.png" alt="Gîtes de France">
-                    </div>
-                    <!-- SNOF -->
-                    <div class="client-logo-box">
-                        <img src="images/clients/tlchargement8.jpg" alt="SNOF">
-                    </div>
-                    <!-- Mister France -->
-                    <div class="client-logo-box">
-                        <img src="images/clients/tlchargement9.jpg" alt="Mister France">
-                    </div>
+                    <div class="client-logo-box"><img src="images/clients/images.png" alt="Canal+"></div>
+                    <div class="client-logo-box"><img src="images/clients/images1.png" alt="France Télévisions"></div>
+                    <div class="client-logo-box"><img src="images/clients/tlchargement2.png" alt="SFR"></div>
+                    <div class="client-logo-box"><img src="images/clients/tlchargement3.png" alt="Gîtes de France"></div>
+                    <div class="client-logo-box"><img src="images/clients/tlchargement8.jpg" alt="SNOF"></div>
+                    <div class="client-logo-box"><img src="images/clients/tlchargement9.jpg" alt="Mister France"></div>
                 </div>
             </div>
         </div>
@@ -250,36 +446,44 @@
             <div class="custom-card">
                 <div style="color: #D4AF37; font-size: 8pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">PREUVE SOCIALE & IMPACT</div>
                 <h2 style="font-size: 16pt; font-weight: 900; text-transform: uppercase; margin-bottom: 15px;">CE QUE DISENT CEUX QUI DOMINENT LEUR MARCHÉ</h2>
-                <p style="font-size: 9.5pt; color: #CCCCCC; max-width: 700px; margin: 0 auto 25px auto; line-height: 1.4;">
-                    L'excellence ne se décrète pas, elle se prouve. Découvrez les retours d'expérience de nos partenaires et décidez de passer un cap.
-                </p>
-
-                <!-- Widget Elfsight Google Reviews Intégré -->
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                
+                <!-- Widget Elfsight Google Reviews -->
                 <script src="https://elfsightcdn.com/platform.js" async></script>
                 <div class="elfsight-app-8d69563d-5a1e-4c6c-b283-6dc6a0ee4027" data-elfsight-app-lazy></div>
 
-                <!-- Appel à l'action orienté Closing -->
-                <div style="margin-top: 30px;">
-                    <p style="font-size: 10pt; font-weight: 600; margin-bottom: 15px;">Prêt à structurer votre projet et à écraser la concurrence ?</p>
-                    <a href="#contact" class="closing-btn" onclick="document.getElementById('whatsapp-link').click(); return false;">Lancer votre projet avec DCC Production</a>
+                <!-- Lien vers les tarifs complets sur Drive -->
+                <div style="margin: 25px 0;">
+                    <a href="https://drive.google.com/file/d/1CZxlkMbLy6ITTEpQu-GPK5CV-8Sey1fy/view?usp=drive_link" target="_blank" class="closing-btn" style="background: linear-gradient(135deg, #D4AF37 0%, #aa8c2c 100%); color: #000; margin-right: 10px;">Consulter tous nos tarifs ici</a>
+                </div>
+
+                <!-- Appel à l'action closing -->
+                <div style="margin-top: 20px;">
+                    <p style="font-size: 10pt; font-weight: 600; margin-bottom: 10px;">Prêt à passer au niveau supérieur ? Discutons de votre projet.</p>
+                    <p style="font-size: 9pt; color: #CCCCCC; margin-bottom: 15px;">La première étape vers votre réussite est offerte. Décrivez votre ambition et recevez un audit de faisabilité personnalisé.</p>
+                    <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20lancer%20mon%20projet%20avec%20DCC%20Production%20et%20bénéficier%20de%20mon%20audit%20stratégique." target="_blank" class="closing-btn">Lancer votre projet avec Daia</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pied de page / Footer -->
-    <footer class="u-align-center u-clearfix u-footer" style="padding: 20px 0; text-align: center;">
+    <footer class="u-align-center u-clearfix u-footer" style="padding: 25px 0; text-align: center;">
         <div class="u-clearfix u-sheet">
-            <p style="font-size: 7.5pt; color: #888888; letter-spacing: 1px; margin: 0;">
-                © 2026 DCC PRODUCTION - TOUS DROITS RÉSERVÉS | SIRET EN COURS DE MATRICULATION
+            <p style="font-size: 8pt; color: #888888; letter-spacing: 1px; margin-bottom: 5px;">
+                © 2026 DCC PROD. Todos los derechos reservados.
+            </p>
+            <p style="font-size: 8pt; color: #AAAAAA; letter-spacing: 0.5px; margin-bottom: 10px;">
+                📍 12 ter route de Bordeaux, 69670 Vaugneray | Microempresa – SIRET en cours de matriculation
+            </p>
+            <p style="font-size: 7.5pt; color: #E50914; font-weight: 700; text-transform: uppercase; margin: 0;">
+                DCC PRODUCTION, le seul réflexe...
             </p>
         </div>
     </footer>
 
-    <!-- Widget WhatsApp Multilingue pour Daia -->
+    <!-- Widget WhatsApp Flottant Global -->
     <div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-        <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer"
+        <a id="whatsapp-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20en%20savoir%20plus%20sur%20les%20services%20de%20DCC%20Production%20et%20obtenir%20un%20devis." target="_blank" rel="noopener noreferrer"
            style="background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); border: 1px solid rgba(255,255,255,0.2);">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-right: 8px;">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
@@ -290,23 +494,18 @@
 
     <!-- Script de Détection Multilingue (FR, EN, ES, IT, DE, JA) -->
     <script>
-        const phoneNumber = "33667400199"; 
-        
-        const messages = {
-            fr: { text: "Discuter avec Daia", msg: "Bonjour Daia, je souhaite en savoir plus sur les services de DCC Production." },
-            en: { text: "Chat with Daia", msg: "Hello Daia, I would like to know more about DCC Production's services." },
-            es: { text: "Chatear con Daia", msg: "Hola Daia, me gustaría saber más sobre los servicios de DCC Production." },
-            it: { text: "Chatta con Daia", msg: "Ciao Daia, vorrei saperne di più sui servizi di DCC Production." },
-            de: { text: "Mit Daia chatten", msg: "Hallo Daia, ich möchte mehr über die Dienstleistungen von DCC Production erfahren." },
-            ja: { text: "Daiaとチャット", msg: "こんにちはDaiaさん、DCC Productionのサービスについてもっと知りたいです。" }
-        };
-
         const userLang = (navigator.language || navigator.userLanguage || "fr").substring(0, 2).toLowerCase();
-        const selectedLang = messages[userLang] ? userLang : "fr";
-
-        document.getElementById("whatsapp-text").innerText = messages[selectedLang].text;
-        const encodedMsg = encodeURIComponent(messages[selectedLang].msg);
-        document.getElementById("whatsapp-link").href = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
+        const messages = {
+            fr: "Discuter avec Daia",
+            en: "Chat with Daia",
+            es: "Chatear con Daia",
+            it: "Chatta con Daia",
+            de: "Mit Daia chatten",
+            ja: "Daiaとチャット"
+        };
+        if (messages[userLang]) {
+            document.getElementById("whatsapp-text").innerText = messages[userLang];
+        }
     </script>
 
 </body>
