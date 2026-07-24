@@ -149,63 +149,16 @@
             "Eric Lavaine, Sébastien Favette, Sabine Crossen, Tom Van Avermaet, Laurent Claret, Jean-Marie Paris, Guillaume Levil, Bruno Richaud, Lada Imamovic",
             "Natacha Lindinger, François Berléand, Léo Legrand, Marie Colomb, Benno Fürmann, Will Attenborough, Catalina del Rosario, Alva Schäfer, Pauline Pollmann, Gaël Langouët, Matéo Paitel, Jules Porier, Mustapha Abourachid, Jonathan Nyati, Jacqueline Corado, Arnaud Viard, Adrian Can, Théo Navarro-Mussy, Laurent Secco, Éric Soubelet, Élise Tilloloy, Esther Gaumont, Salem Kali, Jérôme Fonlupt, Marie Blanche, Jérôme Sauvion"
           ],
-          "employee": [
-            { "@type": "Person", "name": "Sophie Duez" },
-            { "@type": "Person", "name": "Thomas Jouannet" },
-            { "@type": "Person", "name": "Bruno Debrandt" },
-            { "@type": "Person", "name": "Ophélia Kolb" },
-            { "@type": "Person", "name": "Armelle Deutsch" },
-            { "@type": "Person", "name": "Joy Esther" },
-            { "@type": "Person", "name": "Flavie Péan" },
-            { "@type": "Person", "name": "Marie Kremer" },
-            { "@type": "Person", "name": "Ambroise Michel" },
-            { "@type": "Person", "name": "Mark Grosy" },
-            { "@type": "Person", "name": "Antoine Coesens" },
-            { "@type": "Person", "name": "Eric Lavaine" },
-            { "@type": "Person", "name": "Sabine Crossen" },
-            { "@type": "Person", "name": "Tom Van Avermaet" },
-            { "@type": "Person", "name": "Laurent Claret" },
-            { "@type": "Person", "name": "Jean-Marie Paris" },
-            { "@type": "Person", "name": "Guillaume Levil" },
-            { "@type": "Person", "name": "Bruno Richaud" },
-            { "@type": "Person", "name": "Lada Imamovic" },
-            { "@type": "Person", "name": "Natacha Lindinger" },
-            { "@type": "Person", "name": "François Berléand" },
-            { "@type": "Person", "name": "Léo Legrand" },
-            { "@type": "Person", "name": "Marie Colomb" },
-            { "@type": "Person", "name": "Benno Fürmann" },
-            { "@type": "Person", "name": "Will Attenborough" },
-            { "@type": "Person", "name": "Catalina del Rosario" },
-            { "@type": "Person", "name": "Alva Schäfer" },
-            { "@type": "Person", "name": "Pauline Pollmann" },
-            { "@type": "Person", "name": "Gaël Langouët" },
-            { "@type": "Person", "name": "Matéo Paitel" },
-            { "@type": "Person", "name": "Jules Porier" },
-            { "@type": "Person", "name": "Mustapha Abourachid" },
-            { "@type": "Person", "name": "Jonathan Nyati" },
-            { "@type": "Person", "name": "Jacqueline Corado" },
-            { "@type": "Person", "name": "Arnaud Viard" },
-            { "@type": "Person", "name": "Adrian Can" },
-            { "@type": "Person", "name": "Théo Navarro-Mussy" },
-            { "@type": "Person", "name": "Laurent Secco" },
-            { "@type": "Person", "name": "Éric Soubelet" },
-            { "@type": "Person", "name": "Élise Tilloloy" },
-            { "@type": "Person", "name": "Esther Gaumont" },
-            { "@type": "Person", "name": "Salem Kali" },
-            { "@type": "Person", "name": "Jérôme Fonlupt" },
-            { "@type": "Person", "name": "Marie Blanche" },
-            { "@type": "Person", "name": "Jérôme Sauvion" }
-          ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Services, Tarifs et Goodies DCC PRODUCTION",
+            "name": "Services, Tarifs et Boutique DCC PRODUCTION",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
                   "name": "Stratégie de Positionnement et Growth Engineering",
-                  "description": "Ingénierie de rupture, structuration d'offres souveraines et optimisation des tunnels de conversion pour dirigeants et structures à haute exigence."
+                  "description": "Ingénierie de rupture, structuration d'offres souveraines et optimisation des tunnels de conversion."
                 }
               },
               {
@@ -213,15 +166,15 @@
                 "itemOffered": {
                   "@type": "Service",
                   "name": "Arsenal de Production Visuelle & Audiovisuelle",
-                  "description": "Création de films, teasers, badges industriels, chartes graphiques de domination et esthétiques de production cinématographique."
+                  "description": "Création de films, teasers et chartes graphiques de domination cinématographique."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Boutique Goodies & Manifestes",
-                  "description": "Objets dérivés et livres stratégiques de Sébastien Favette."
+                  "name": "Boutique Officielle Spreadshop",
+                  "description": "Merchandising exclusif et manifestes DCC."
                 }
               }
             ]
@@ -404,19 +357,46 @@
             display: block;
         }
 
-        .hero-video-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        /* OVERLAY VIDÉO PLEIN ECRAN D'ARRIVÉE AVEC BOUTON PASSER */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
         }
-        .hero-video-container video, .hero-video-container iframe {
+        #intro-overlay video {
             width: 100%;
-            display: block;
-            aspect-ratio: 16/9;
+            height: 100%;
+            object-fit: cover;
+        }
+        .skip-intro-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(15, 17, 21, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            color: #FFFFFF;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 9pt;
+            letter-spacing: 1px;
+            cursor: pointer;
+            z-index: 100000;
+            transition: background 0.3s;
+        }
+        .skip-intro-btn:hover {
+            background: #38BDF8;
+            color: #0F172A;
         }
 
         /* Grille Tarifs */
@@ -463,32 +443,6 @@
             font-weight: bold;
         }
 
-        /* Boutique Goodies */
-        .goodies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .goodie-item {
-            background: rgba(15, 17, 21, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-        }
-        .goodie-item h4 {
-            font-size: 10pt;
-            color: #FFFFFF;
-            margin-bottom: 8px;
-        }
-        .goodie-price {
-            font-size: 11pt;
-            font-weight: 700;
-            color: #38BDF8;
-            margin-bottom: 15px;
-        }
-
         .legal-footer {
             max-width: 900px;
             margin: 40px auto;
@@ -507,6 +461,15 @@
 </head>
 <body class="u-body u-xl-mode" data-lang="fr">
     
+    <!-- OVERLAY VIDÉO INTRODUCTIVE (PREMIER PLAN À L'ARRIVÉE) -->
+    <div id="intro-overlay">
+        <button class="skip-intro-btn" onclick="closeIntro()">Passer l'introduction ➔</button>
+        <video id="intro-video" autoplay muted playsinline onended="closeIntro()">
+            <source src="images/video-presentation.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+    </div>
+
     <!-- Bouton WhatsApp Flottant -->
     <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20lancer%20mon%20projet%20avec%20DCC%20Production." target="_blank" class="whatsapp-float">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.482 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -516,7 +479,7 @@
     <!-- Lecteur Musical Flottant -->
     <div class="music-float-player">
         <span class="music-label">🎵 Who I Am</span>
-        <audio id="bg-music" controls autoplay>
+        <audio id="bg-music" controls>
             <source src="https://music.youtube.com/watch?v=TEByHpEmaug&si=lgXawzhnuTAg6frQ" type="audio/mpeg">
             <source src="audio/who-i-am.mp3" type="audio/mpeg">
             Votre navigateur ne supporte pas l'élément audio.
@@ -539,7 +502,7 @@
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#accueil">Accueil</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#services">Services</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#tarifs">Tarifs</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#goodies">Goodies</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#goodies">Boutique & Goodies</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#leadership">Le Fondateur</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#livres">Livres</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis">Avis</a></li>
@@ -549,26 +512,17 @@
         </div>
     </header>
 
-    <!-- 1. SECTION ACCUEIL (AVEC VIDÉO) -->
+    <!-- 1. SECTION ACCUEIL -->
     <section class="u-clearfix" id="accueil" style="padding: 40px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card" style="text-align: center;">
                 <span style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">L'Exigence Cinématographique</span>
-                <h1 style="font-size: 22pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">Qui sommes-nous ? Pourquoi DCC Production ?</h1>
+                <h1 style="font-size: 22pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">L'Arsenal Visuel & Stratégique</h1>
                 <p style="font-size: 10pt; color: #94A3B8; line-height: 1.7; margin-bottom: 25px;">
-                    DCC Production est l'agence de production audiovisuelle et de stratégie de pointe dédiée aux créateurs, entreprises et marques exigeantes. 
-                    Nous ne faisons pas de simple contenu : nous sculptons votre impact, unissons la vision artistique et l'efficacité commerciale internationale.
+                    DCC Production façonne l'impact des dirigeants et structures d'élite. 
+                    Maîtrisez votre image, dominez votre marché et convertissez l'attention en souveraineté.
                 </p>
-                
-                <!-- VIDÉO D'ACCUEIL -->
-                <div class="hero-video-container">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="images/video-presentation.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
-                </div>
-
-                <p style="font-size: 9.5pt; color: #38BDF8; font-weight: 700; text-transform: uppercase; margin-top: 20px;">
+                <p style="font-size: 9.5pt; color: #38BDF8; font-weight: 700; text-transform: uppercase;">
                     One Voice. One Direction. Your Choice.
                 </p>
             </div>
@@ -644,27 +598,21 @@
         </div>
     </section>
 
-    <!-- 4. BOUTIQUE GOODIES -->
+    <!-- 4. BOUTIQUE SPREADSHOP & GOODIES (POSITIONNÉ STRATÉGIQUEMENT AVANT LE FOOTER POUR CAPTURER L'IMPULSION D'ACHAT) -->
     <section class="u-clearfix" id="goodies" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-            <div class="custom-card">
-                <span style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">Édition & Exclusivités</span>
-                <h2 style="font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">Boutique Goodies & Manifestes DCC</h2>
-                <p style="font-size: 9.5pt; color: #94A3B8; margin-bottom: 20px;">Portez l'étendard de l'exigence et accédez aux ouvrages officiels.</p>
+            <div class="custom-card" style="text-align: center;">
+                <span style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">Merchandising & Exclusivités</span>
+                <h2 style="font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; color: #FFFFFF;">La Boutique Officielle DCC Production</h2>
+                <p style="font-size: 9.5pt; color: #94A3B8; margin-bottom: 25px;">Portez les couleurs et les manifestes de l'exigence. Commandez directement via notre boutique intégrée.</p>
                 
-                <div class="goodies-grid">
-                    <div class="goodie-item">
-                        <h4>Livre "Votre Comm' est invisible"</h4>
-                        <div class="goodie-price">Format International</div>
-                        <p style="font-size: 8pt; color: #94A3B8; margin-bottom: 15px;">Le manifeste incontournable de Sébastien Favette sur Amazon.</p>
-                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20commander%20le%20livre%20de%20Sébastien%20Favette." target="_blank" class="closing-btn" style="font-size: 7.5pt; padding: 8px 12px;">Commander via Daia</a>
-                    </div>
-                    <div class="goodie-item">
-                        <h4>Goodies & Merch Exclusif</h4>
-                        <div class="goodie-price">Édition Limitée</div>
-                        <p style="font-size: 8pt; color: #94A3B8; margin-bottom: 15px;">Accessoires et textiles brandés DCC Production.</p>
-                        <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20recevoir%20le%20catalogue%20des%20goodies%20DCC." target="_blank" class="closing-btn" style="font-size: 7.5pt; padding: 8px 12px;">Commander via Daia</a>
-                    </div>
+                <!-- INTEGRATION SPREADSHOP -->
+                <div id="myShop" style="margin: 20px auto; min-height: 400px;">
+                    <a href="https://dccproduction.myspreadshop.fr">dccproduction</a>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20j'ai%20une%20question%20concernant%20un%20article%20de%20la%20boutique%20DCC." target="_blank" class="closing-btn" style="font-size: 8pt; padding: 10px 20px;">Une question sur la boutique ? Échanger avec Daia</a>
                 </div>
             </div>
         </div>
@@ -722,8 +670,20 @@
         <p style="margin-top: 10px; font-size: 7.5pt;">Siège social : 12 ter route de Bordeaux, 69670 Vaugneray - France | Contact : singledalt69@gmail.com</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- SCRIPTS SPREADSHOP ET OVERLAY -->
     <script>
+        function closeIntro() {
+            const overlay = document.getElementById('intro-overlay');
+            const video = document.getElementById('intro-video');
+            if(video) video.pause();
+            if(overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 500);
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('bg-music');
             audio.volume = 0.5;
@@ -757,5 +717,16 @@
             });
         });
     </script>
+
+    <!-- Configuration Spreadshop -->
+    <script>
+        var spread_shop_config = {
+            shopName: 'dccproduction',
+            locale: 'fr_FR',
+            prefix: 'https://dccproduction.myspreadshop.fr',
+            baseId: 'myShop'
+        };
+    </script>
+    <script type="text/javascript" src="https://dccproduction.myspreadshop.fr/shopfiles/shopclient/shopclient.nocache.js"></script>
 </body>
 </html>
