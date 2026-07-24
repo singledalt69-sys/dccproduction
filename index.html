@@ -142,6 +142,29 @@
             filter: grayscale(0%) brightness(1);
         }
 
+        /* Bouton de closing direct */
+        .closing-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #E50914 0%, #b20710 100%);
+            color: #FFFFFF;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 9pt;
+            letter-spacing: 1.5px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .closing-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 25px rgba(229, 9, 20, 0.6);
+        }
+
         .u-footer {
             background-color: #0d0d0d !important;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -162,7 +185,7 @@
                     <ul class="u-nav u-unstyled" style="display: flex; gap: 20px;">
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="color: #FFF;">Accueil</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#clients" style="color: #FFF;">Références</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#projets" style="color: #FFF;">Avis</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis" style="color: #FFF;">Avis</a></li>
                     </ul>
                 </div>
             </nav>
@@ -186,7 +209,7 @@
     </section>
 
     <!-- Section Références & Logos Clients -->
-    <section class="u-clearfix" id="clients" style="padding: 20px 0 40px 0;">
+    <section class="u-clearfix" id="clients" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
             <div class="custom-card">
                 <h2 style="text-align: center; font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;" class="gold-accent">Ils font confiance à notre expertise</h2>
@@ -221,16 +244,25 @@
         </div>
     </section>
 
-    <!-- Section Flux d'actualités / Avis (Feedwind & Elfsight) -->
-    <section class="u-clearfix" id="projets" style="padding: 20px 0 40px 0;">
-        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 25px;" class="gold-accent">Avis & Retours</h2>
-            
+    <!-- Section Avis Google & Closing Stratégique -->
+    <section class="u-clearfix" id="avis" style="padding: 20px 0 40px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto; text-align: center;">
             <div class="custom-card">
-                <!-- Intégration widget avis clients -->
-                <div class="u-preserve-proportions u-widget-elfsight">
-                    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-                    <div class="elfsight-app-google-reviews-placeholder"></div>
+                <div style="color: #D4AF37; font-size: 8pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">PREUVE SOCIALE & IMPACT</div>
+                <h2 style="font-size: 16pt; font-weight: 900; text-transform: uppercase; margin-bottom: 15px;">CE QUE DISENT CEUX QUI DOMINENT LEUR MARCHÉ</h2>
+                <p style="font-size: 9.5pt; color: #CCCCCC; max-width: 700px; margin: 0 auto 25px auto; line-height: 1.4;">
+                    L'excellence ne se décrète pas, elle se prouve. Découvrez les retours d'expérience de nos partenaires et décidez de passer un cap.
+                </p>
+
+                <!-- Widget Elfsight Google Reviews Intégré -->
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-8d69563d-5a1e-4c6c-b283-6dc6a0ee4027" data-elfsight-app-lazy></div>
+
+                <!-- Appel à l'action orienté Closing -->
+                <div style="margin-top: 30px;">
+                    <p style="font-size: 10pt; font-weight: 600; margin-bottom: 15px;">Prêt à structurer votre projet et à écraser la concurrence ?</p>
+                    <a href="#contact" class="closing-btn" onclick="document.getElementById('whatsapp-link').click(); return false;">Lancer votre projet avec DCC Production</a>
                 </div>
             </div>
         </div>
