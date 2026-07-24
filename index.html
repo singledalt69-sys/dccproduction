@@ -6,41 +6,60 @@
     <title>DCC Production - Cinematographic Excellence & Growth Tunnels</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importation de polices élégantes (serif haut de gamme) pour correspondre au design de référence -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         .page-section {
             display: none;
         }
         .page-section.active {
             display: block;
-            animation: fadeIn 0.3s ease-in-out;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0c0a09;
+            color: #f5f5f4;
+        }
+        .font-serif-custom {
+            font-family: 'Cormorant Garamond', serif;
         }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-gray-950">
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#c5a059] selection:text-gray-950">
 
-    <!-- Navigation Supérieure Multilingue & Routage par Pages -->
-    <header class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-amber-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Navigation Supérieure Multilingue & Routage par Pages (style épuré luxe) -->
+    <header class="sticky top-0 z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-[#c5a059]/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Logo style minimaliste de référence -->
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
-                <span class="text-2xl font-black tracking-wider text-amber-400">DCC PRODUCTION</span>
+                <div class="flex items-baseline space-x-2">
+                    <span class="text-2xl font-serif-custom tracking-widest text-[#c5a059]">DCC</span>
+                    <div class="hidden sm:block border-l border-[#c5a059]/40 pl-2">
+                        <span class="text-[9px] font-semibold tracking-[0.25em] text-gray-300 block uppercase">PRODUCTION</span>
+                        <span class="text-[7px] tracking-[0.1em] text-gray-500 block uppercase">ONE VOICE. ONE DIRECTION.</span>
+                    </div>
+                </div>
             </div>
             
-            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
-                <button onclick="switchPage('home')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_home">Accueil</button>
-                <button onclick="switchPage('services')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_services">Services</button>
-                <button onclick="switchPage('tarifs')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_tarifs">Prix</button>
-                <button onclick="switchPage('goodies')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_goodies">Shop</button>
-                <button onclick="switchPage('leadership')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_leadership">Le Fondateur</button>
-                <button onclick="switchPage('livres')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_livres">Bücher</button>
-                <button onclick="switchPage('avis')" class="nav-link text-gray-300 hover:text-amber-400 transition-colors" data-i18n="nav_avis">Bewertungen</button>
+            <!-- Menu de navigation principal -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs font-medium tracking-widest uppercase">
+                <button onclick="switchPage('home')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_home">Accueil</button>
+                <button onclick="switchPage('services')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_services">Services</button>
+                <button onclick="switchPage('tarifs')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_tarifs">Prix</button>
+                <button onclick="switchPage('goodies')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_goodies">Shop</button>
+                <button onclick="switchpage_safe('leadership')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_leadership">Le Fondateur</button>
+                <button onclick="switchPage('livres')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_livres">Bücher</button>
+                <button onclick="switchPage('avis')" class="nav-link text-gray-300 hover:text-[#c5a059] transition-colors" data-i18n="nav_avis">Bewertungen</button>
             </nav>
 
+            <!-- Sélecteur de langue & CTA -->
             <div class="flex items-center space-x-4">
-                <select id="lang-switch" onchange="changeLanguage(this.value)" class="bg-gray-900 border border-amber-500/40 text-amber-400 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                <select id="lang-switch" onchange="changeLanguage(this.value)" class="bg-[#141210] border border-[#c5a059]/30 text-[#c5a059] text-xs font-medium rounded px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#c5a059]">
                     <option value="fr">FR</option>
                     <option value="en">EN</option>
                     <option value="es">ES</option>
@@ -49,121 +68,177 @@
                     <option value="it">IT</option>
                     <option value="ja">JA</option>
                 </select>
+                <button onclick="switchPage('tarifs')" class="hidden sm:inline-flex items-center border border-[#c5a059]/40 hover:border-[#c5a059] text-gray-200 text-xs uppercase tracking-widest px-4 py-2 transition-all">
+                    <span data-i18n="nav_contact">Parlons-nous</span> <span class="ml-2 text-[#c5a059]">↗</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Contenu Principal -->
+    <!-- Contenu Principal : Style Visuel Inspiré de la Référence -->
     <main class="flex-grow">
 
-        <!-- PAGE 1 : ACCUEIL (Style épuré sans cadre gris, conforme à la référence) -->
-        <section id="page-home" class="page-section active py-24">
-            <div class="max-w-5xl mx-auto px-4 text-center">
-                <span class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-8" data-i18n="badge_top">Excellence Cinématographique & Souveraineté Absolue</span>
-                <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 leading-tight" data-i18n="main_title">L'Arsenal Visuel Qui Écrase la Concurrence</h1>
-                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-12" data-i18n="main_desc">Appliquez la règle des 80/20 : éliminez le bruit et convertissez vos prospects cibles.</p>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <button onclick="switchPage('tarifs')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="cta_main">Sécuriser votre position de leader</button>
-                    <a href="https://wa.me/?text=Bonjour%20Daia" target="_blank" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-amber-400 border border-amber-500/30 font-bold px-8 py-4 rounded-xl transition-all" data-i18n="whatsapp_text">Discuter avec Daia</a>
+        <!-- PAGE 1 : ACCUEIL (Direction artistique de luxe épurée) -->
+        <section id="page-home" class="page-section active relative overflow-hidden py-16 lg:py-24">
+            <!-- Élément graphique radial d'arrière-plan rappelant le radar/cercle de la référence -->
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] pointer-events-none opacity-25">
+                <div class="absolute inset-0 rounded-full border border-[#c5a059]/20"></div>
+                <div class="absolute inset-16 rounded-full border border-dashed border-[#c5a059]/30"></div>
+                <div class="absolute inset-32 rounded-full border border-[#c5a059]/10 bg-gradient-to-br from-transparent via-[#881337]/20 to-transparent"></div>
+                <!-- Point rouge indicateur sur le cercle -->
+                <div class="absolute bottom-24 left-1/2 w-2 h-2 bg-red-600 rounded-full shadow-[0_0_10px_#dc2626]"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Sous-titre avec filet de gauche -->
+                <div class="flex items-center space-x-3 mb-8">
+                    <div class="w-8 h-[1px] bg-[#c5a059]"></div>
+                    <span class="text-[11px] font-semibold tracking-[0.25em] text-[#c5a059] uppercase" data-i18n="badge_top">Production Audiovisuelle Internationale</span>
+                </div>
+
+                <!-- Titre principal en typographie Serif majestueuse -->
+                <div class="max-w-4xl mb-8">
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif-custom font-light tracking-tight text-white leading-[1.05] mb-2">
+                        Une vision <span class="italic text-gray-400 font-normal">.</span>
+                    </h1>
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif-custom font-light tracking-tight italic text-gray-400 leading-[1.05]">
+                        Sans frontières <span class="not-italic text-white">.</span>
+                    </h1>
+                </div>
+
+                <!-- Description & Call to Actions -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                    <div class="lg:col-span-5">
+                        <p class="text-sm sm:text-base text-gray-400 leading-relaxed font-light" data-i18n="main_desc">
+                            Nous transformons les ambitions de marque en récits cinématographiques capables de voyager, d'émouvoir et de rester.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-wrap items-center gap-4 lg:justify-end">
+                        <button onclick="switchPage('tarifs')" class="bg-[#c5a059] hover:bg-[#b08d46] text-gray-950 font-semibold text-xs uppercase tracking-widest px-8 py-4 transition-all shadow-lg">
+                            <span data-i18n="cta_main">Sécuriser votre position de leader</span>
+                        </button>
+                        <a href="https://wa.me/?text=Bonjour%20Daia" target="_blank" class="border border-[#c5a059]/40 hover:border-[#c5a059] text-amber-400 font-semibold text-xs uppercase tracking-widest px-8 py-4 transition-all bg-[#141210]/60">
+                            <span data-i18n="whatsapp_text">Discuter avec Daia</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Badge Showreel flottant style minimaliste -->
+                <div class="mt-20 flex items-center justify-end">
+                    <div onclick="switchPage('services')" class="group cursor-pointer flex items-center space-x-4 bg-[#e7e5df] text-gray-950 hover:bg-white p-6 rounded-full w-40 h-40 flex-col justify-center items-center text-center transition-transform duration-300 hover:scale-105 shadow-2xl">
+                        <div class="w-8 h-8 rounded-full bg-gray-950 text-white flex items-center justify-center mb-1 group-hover:scale-110 transition-transform">
+                            <svg class="w-3 h-3 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider block" data-i18n="showreel_btn">Voir le Showreel</span>
+                        <span class="text-[8px] text-gray-600 uppercase tracking-widest">DCC</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- PAGE 2 : SERVICES -->
-        <section id="page-services" class="page-section py-16">
+        <section id="page-services" class="page-section py-20">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="srv_title">Ingénierie Audiovisuelle & Growth Tunnels</h2>
-                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="srv_desc">Nous concevons des manifestes cinématographiques et des tunnels de vente multilingues.</p>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-6 h-[1px] bg-[#c5a059]"></div>
+                    <span class="text-[10px] font-semibold tracking-[0.25em] text-[#c5a059] uppercase">Expertise</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-serif-custom font-light text-white mb-6" data-i18n="srv_title">Ingénierie Audiovisuelle & Growth Tunnels</h2>
+                <p class="text-gray-400 max-w-2xl mb-12 font-light" data-i18n="srv_desc">Nous concevons des manifestes cinématographiques et des tunnels de vente multilingues.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl">
-                        <h3 class="text-xl font-bold text-white mb-3">Manifestes Cinématographiques</h3>
-                        <p class="text-gray-400 text-sm">Captation haute définition, étalonnage de précision et direction artistique sans concession pour marquer les esprits.</p>
+                    <div class="bg-[#141210] border border-[#c5a059]/20 p-8 rounded-xl">
+                        <h3 class="text-xl font-serif-custom text-white mb-3">Manifestes Cinématographiques</h3>
+                        <p class="text-gray-400 text-sm font-light">Captation haute définition, étalonnage de précision et direction artistique sans concession pour marquer les esprits.</p>
                     </div>
-                    <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl">
-                        <h3 class="text-xl font-bold text-white mb-3">Growth Tunnels & Daia WhatsApp</h3>
-                        <p class="text-gray-400 text-sm">Automatisation intelligente et tunnels de conversion multilingues pilotés par IA pour transformer l'audience en clients fidèles.</p>
+                    <div class="bg-[#141210] border border-[#c5a059]/20 p-8 rounded-xl">
+                        <h3 class="text-xl font-serif-custom text-white mb-3">Growth Tunnels & Daia WhatsApp</h3>
+                        <p class="text-gray-400 text-sm font-light">Automatisation intelligente et tunnels de conversion multilingues pilotés par IA pour transformer l'audience en clients fidèles.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- PAGE 3 : PRIX & TARIFS -->
-        <section id="page-tarifs" class="page-section py-16">
+        <section id="page-tarifs" class="page-section py-20">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="tarifs_title">Investissement & Souveraineté</h2>
-                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="tarifs_desc">Zéro compromis. Des solutions d'élite pour une domination totale.</p>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-6 h-[1px] bg-[#c5a059]"></div>
+                    <span class="text-[10px] font-semibold tracking-[0.25em] text-[#c5a059] uppercase">Tarification</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-serif-custom font-light text-white mb-6" data-i18n="tarifs_title">Investissement & Souveraineté</h2>
+                <p class="text-gray-400 max-w-2xl mb-12 font-light" data-i18n="tarifs_desc">Zéro compromis. Des solutions d'élite pour une domination totale.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="bg-[#141210] border border-[#c5a059]/30 p-8 rounded-xl flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-amber-400 mb-2">Social Impact</h3>
-                            <p class="text-gray-400 text-sm mb-4">Montage vertical 9:16 dynamique, sound design et habillage percutant.</p>
-                            <div class="text-2xl font-bold text-white mb-4">129 € <span class="text-sm font-normal text-gray-400">HT</span></div>
+                            <h3 class="text-xl font-serif-custom text-[#c5a059] mb-3">Social Impact</h3>
+                            <p class="text-gray-400 text-sm mb-6 font-light">Montage vertical 9:16 dynamique, sound design et habillage percutant.</p>
+                            <div class="text-3xl font-serif-custom text-white mb-6">129 € <span class="text-xs font-sans font-normal text-gray-500">HT</span></div>
                         </div>
-                        <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Unité</span>
+                        <span class="text-[10px] text-[#c5a059] font-semibold uppercase tracking-widest">Unité</span>
                     </div>
-                    <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="bg-[#141210] border border-[#c5a059]/30 p-8 rounded-xl flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-amber-400 mb-2">Pack 5 Vidéos</h3>
-                            <p class="text-gray-400 text-sm mb-4">Le pack complet pour alimenter vos réseaux avec un impact maximal.</p>
-                            <div class="text-2xl font-bold text-white mb-4">500 € <span class="text-sm font-normal text-gray-400">HT</span></div>
+                            <h3 class="text-xl font-serif-custom text-[#c5a059] mb-3">Pack 5 Vidéos</h3>
+                            <p class="text-gray-400 text-sm mb-6 font-light">Le pack complet pour alimenter vos réseaux avec un impact maximal.</p>
+                            <div class="text-3xl font-serif-custom text-white mb-6">500 € <span class="text-xs font-sans font-normal text-gray-500">HT</span></div>
                         </div>
-                        <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Pack Stratégique</span>
+                        <span class="text-[10px] text-[#c5a059] font-semibold uppercase tracking-widest">Pack Stratégique</span>
                     </div>
-                    <div class="bg-gray-900 border border-amber-500/30 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="bg-[#141210] border border-[#c5a059]/30 p-8 rounded-xl flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-amber-400 mb-2">Social Full</h3>
-                            <p class="text-gray-400 text-sm mb-4">Gestion complète, community management et diffusion ciblée.</p>
-                            <div class="text-2xl font-bold text-white mb-4">790 € <span class="text-sm font-normal text-gray-400">/ mois HT</span></div>
+                            <h3 class="text-xl font-serif-custom text-[#c5a059] mb-3">Social Full</h3>
+                            <p class="text-gray-400 text-sm mb-6 font-light">Gestion complète, community management et diffusion ciblée.</p>
+                            <div class="text-3xl font-serif-custom text-white mb-6">790 € <span class="text-xs font-sans font-normal text-gray-500">/ mois HT</span></div>
                         </div>
-                        <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Clé en main</span>
+                        <span class="text-[10px] text-[#c5a059] font-semibold uppercase tracking-widest">Clé en main</span>
                     </div>
                 </div>
                 <div class="mt-12 text-center">
-                    <button onclick="switchPage('services')" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg" data-i18n="tarifs_cta">Réserver une session stratégique</button>
+                    <button onclick="switchPage('services')" class="bg-[#c5a059] hover:bg-[#b08d46] text-gray-950 font-semibold text-xs uppercase tracking-widest px-8 py-4 transition-all shadow-lg" data-i18n="tarifs_cta">Réserver une session stratégique</button>
                 </div>
             </div>
         </section>
 
         <!-- PAGE 4 : SHOP & GOODIES -->
-        <section id="page-goodies" class="page-section py-16">
+        <section id="page-goodies" class="page-section py-20">
             <div class="max-w-6xl mx-auto px-4 text-center">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="goodies_title">Shop & Éditions Limitées</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="goodies_desc">Accessoires exclusifs au design DCC Production.</p>
-                <div class="bg-gray-900 border border-amber-500/20 p-12 rounded-2xl max-w-xl mx-auto">
-                    <p class="text-gray-400">Boutique en ligne en cours de déploiement. Restez connectés pour les éditions limitées.</p>
+                <h2 class="text-3xl sm:text-5xl font-serif-custom font-light text-white mb-6" data-i18n="goodies_title">Shop & Éditions Limitées</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-12 font-light" data-i18n="goodies_desc">Accessoires exclusifs au design DCC Production.</p>
+                <div class="bg-[#141210] border border-[#c5a059]/20 p-12 rounded-xl max-w-xl mx-auto">
+                    <p class="text-gray-400 font-light">Boutique en ligne en cours de déploiement. Restez connectés pour les éditions limitées.</p>
                 </div>
             </div>
         </section>
 
         <!-- PAGE 5 : LE FONDATEUR -->
-        <section id="page-leadership" class="page-section py-16">
+        <section id="page-leadership" class="page-section py-20">
             <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="lead_title">Le Fondateur - Vision & Stratégie</h2>
-                <p class="text-center text-gray-300 mb-12" data-i18n="lead_desc">Direction stratégique sans concessions.</p>
-                <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl text-gray-300 space-y-4">
+                <h2 class="text-3xl sm:text-5xl font-serif-custom font-light text-white mb-6 text-center" data-i18n="lead_title">Le Fondateur - Vision & Stratégie</h2>
+                <p class="text-center text-gray-400 mb-12 font-light" data-i18n="lead_desc">Direction stratégique sans concessions.</p>
+                <div class="bg-[#141210] border border-[#c5a059]/20 p-8 rounded-xl text-gray-300 space-y-4 font-light">
                     <p>Fondateur de DCC Production, producteur audiovisuel et stratège international, Sébastien insuffle une vision axée sur la souveraineté absolue et l'efficacité de l'élite entrepreneuriale.</p>
                 </div>
             </div>
         </section>
 
         <!-- PAGE 6 : LIVRES & PUBLICATIONS -->
-        <section id="page-livres" class="page-section py-16">
+        <section id="page-livres" class="page-section py-20">
             <div class="max-w-5xl mx-auto px-4 text-center">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4" data-i18n="books_title">Publications Internationales</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto mb-12" data-i18n="books_desc">Ouvrages de référence et éditions globales sur Amazon.</p>
-                <div class="bg-gray-900 border border-amber-500/20 p-8 rounded-2xl max-w-2xl mx-auto">
-                    <h3 class="text-xl font-bold text-white mb-2">Votre Comm' est invisible : comment en sortir ?</h3>
-                    <p class="text-gray-400 text-sm">Disponible sur Amazon en éditions multilingues (Français, Anglais, Espagnol, Allemand, Italien).</p>
+                <h2 class="text-3xl sm:text-5xl font-serif-custom font-light text-white mb-6" data-i18n="books_title">Publications Internationales</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-12 font-light" data-i18n="books_desc">Ouvrages de référence et éditions globales sur Amazon.</p>
+                <div class="bg-[#141210] border border-[#c5a059]/20 p-8 rounded-xl max-w-2xl mx-auto">
+                    <h3 class="text-xl font-serif-custom text-white mb-2">Votre Comm' est invisible : comment en sortir ?</h3>
+                    <p class="text-gray-400 text-sm font-light">Disponible sur Amazon en éditions multilingues (Français, Anglais, Espagnol, Allemand, Italien).</p>
                 </div>
             </div>
         </section>
 
         <!-- PAGE 7 : AVIS & RETOURS -->
-        <section id="page-avis" class="page-section py-16">
+        <section id="page-avis" class="page-section py-20">
             <div class="max-w-5xl mx-auto px-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 text-center mb-4" data-i18n="avis_title">Avis & Retours d'Expérience</h2>
-                <p class="text-center text-gray-300 mb-12" data-i18n="avis_desc">Ce que disent les dirigeants et partenaires.</p>
-                <!-- Widget Elfsight Google Reviews -->
+                <h2 class="text-3xl sm:text-5xl font-serif-custom font-light text-white mb-6 text-center" data-i18n="avis_title">Avis & Retours d'Expérience</h2>
+                <p class="text-center text-gray-400 mb-12 font-light" data-i18n="avis_desc">Ce que disent les dirigeants et partenaires.</p>
                 <script src="https://elfsightcdn.com/platform.js" async></script>
                 <div class="elfsight-app-8d69563d-5a1e-4c6c-b283-6dc6a0ee4027" data-elfsight-app-lazy></div>
             </div>
@@ -172,13 +247,13 @@
     </main>
 
     <!-- Pied de Page Uniforme -->
-    <footer class="bg-gray-900 border-t border-amber-500/20 py-8 mt-16 text-center text-sm text-gray-400">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="bg-[#080706] border-t border-[#c5a059]/15 py-12 text-center text-xs text-gray-500 font-light">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
             <p>© 2026 DCC PRODUCTION. Tous droits réservés.</p>
-            <div class="flex space-x-6">
-                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_legal">Mentions Légales</span>
-                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_rgpd">Politique de Confidentialité (RGPD)</span>
-                <span class="hover:text-amber-400 cursor-pointer" data-i18n="footer_cgv">Conditions Générales de Vente (CGV)</span>
+            <div class="flex flex-wrap justify-center space-x-6">
+                <span class="hover:text-[#c5a059] cursor-pointer" data-i18n="footer_legal">Mentions Légales</span>
+                <span class="hover:text-[#c5a059] cursor-pointer" data-i18n="footer_rgpd">Politique de Confidentialité (RGPD)</span>
+                <span class="hover:text-[#c5a059] cursor-pointer" data-i18n="footer_cgv">Conditions Générales de Vente (CGV)</span>
             </div>
         </div>
     </footer>
@@ -196,14 +271,19 @@
             }
         }
 
+        function switchpage_safe(pageId) {
+            switchPage(pageId);
+        }
+
         const translations = {
             fr: {
-                nav_home: "Accueil", nav_services: "Services", nav_tarifs: "Prix", nav_goodies: "Shop", nav_leadership: "Le Fondateur", nav_livres: "Bücher", nav_avis: "Bewertungen",
-                badge_top: "Excellence Cinématographique & Souveraineté Absolue",
-                main_title: "L'Arsenal Visuel Qui Écrase la Concurrence",
-                main_desc: "Appliquez la règle des 80/20 : éliminez le bruit et convertissez vos prospects cibles.",
+                nav_home: "Accueil", nav_services: "Services", nav_tarifs: "Prix", nav_goodies: "Shop", nav_leadership: "Le Fondateur", nav_livres: "Bücher", nav_avis: "Bewertungen", nav_contact: "Parlons-nous",
+                badge_top: "Production Audiovisuelle Internationale",
+                main_title_1: "Une vision", main_title_2: "Sans frontières",
+                main_desc: "Nous transformons les ambitions de marque en récits cinématographiques capables de voyager, d'émouvoir et de rester.",
                 cta_main: "Sécuriser votre position de leader",
                 whatsapp_text: "Discuter avec Daia",
+                showreel_btn: "Voir le Showreel",
                 srv_title: "Ingénierie Audiovisuelle & Growth Tunnels", srv_desc: "Nous concevons des manifestes cinématographiques et des tunnels de vente multilingues.",
                 tarifs_title: "Investissement & Souveraineté", tarifs_desc: "Zéro compromis. Des solutions d'élite pour une domination totale.", tarifs_cta: "Réserver une session stratégique",
                 goodies_title: "Shop & Éditions Limitées", goodies_desc: "Accessoires exclusifs au design DCC Production.",
@@ -213,12 +293,13 @@
                 footer_legal: "Mentions Légales", footer_rgpd: "Politique de Confidentialité (RGPD)", footer_cgv: "Conditions Générales de Vente (CGV)"
             },
             en: {
-                nav_home: "Home", nav_services: "Services", nav_tarifs: "Pricing", nav_goodies: "Shop", nav_leadership: "The Founder", nav_livres: "Books", nav_avis: "Reviews",
-                badge_top: "Cinematographic Excellence & Absolute Sovereignty",
-                main_title: "The Visual Arsenal That Crushes the Competition",
-                main_desc: "Apply the 80/20 rule: eliminate noise and convert high-potential leads.",
+                nav_home: "Home", nav_services: "Services", nav_tarifs: "Pricing", nav_goodies: "Shop", nav_leadership: "The Founder", nav_livres: "Books", nav_avis: "Reviews", nav_contact: "Let's Talk",
+                badge_top: "International Audiovisual Production",
+                main_title_1: "A vision", main_title_2: "Without borders",
+                main_desc: "We transform brand ambitions into cinematic narratives capable of traveling, moving, and lasting.",
                 cta_main: "Secure Your Leadership Position",
                 whatsapp_text: "Chat with Daia",
+                showreel_btn: "Watch Showreel",
                 srv_title: "Audiovisual Engineering & Growth Tunnels", srv_desc: "We design cinematic manifests and multilingual sales funnels.",
                 tarifs_title: "Investment & Sovereignty", tarifs_desc: "No compromises. Elite solutions for absolute excellence.", tarifs_cta: "Book a Strategic Session",
                 goodies_title: "Shop & Limited Editions", goodies_desc: "Exclusive accessories in DCC Production design.",
@@ -228,12 +309,13 @@
                 footer_legal: "Legal Notice", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Terms of Sale"
             },
             es: {
-                nav_home: "Inicio", nav_services: "Servicios", nav_tarifs: "Precios", nav_goodies: "Tienda", nav_leadership: "El Fundador", nav_livres: "Libros", nav_avis: "Reseñas",
-                badge_top: "Excelencia Cinematográfica & Soberanía Absoluta",
-                main_title: "El Arsenal Visual Que Aplasta a la Competencia",
-                main_desc: "Aplique la regla 80/20: elimine el ruido y convierta clientes potenciales.",
+                nav_home: "Inicio", nav_services: "Servicios", nav_tarifs: "Precios", nav_goodies: "Tienda", nav_leadership: "El Fundador", nav_livres: "Libros", nav_avis: "Reseñas", nav_contact: "Hablemos",
+                badge_top: "Producción Audiovisual Internacional",
+                main_title_1: "Una visión", main_title_2: "Sin fronteras",
+                main_desc: "Transformamos las ambiciones de marca en narrativas cinematográficas capaces de viajar, emocionar y perdurar.",
                 cta_main: "Asegure su posición de liderazgo",
                 whatsapp_text: "Chatear con Daia",
+                showreel_btn: "Ver Showreel",
                 srv_title: "Ingeniería Audiovisual & Growth Tunnels", srv_desc: "Diseñamos manifiestos cinematográficos y embudos de venta multilingües.",
                 tarifs_title: "Inversión & Soberanía", tarifs_desc: "Sin concesiones. Soluciones de élite para la excelencia absoluta.", tarifs_cta: "Reservar sesión estratégica",
                 goodies_title: "Tienda & Ediciones Limitadas", goodies_desc: "Accesorios exclusivos con el diseño de DCC Production.",
@@ -243,12 +325,13 @@
                 footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidad (RGPD)", footer_cgv: "Condiciones de Venta"
             },
             de: {
-                nav_home: "Startseite", nav_services: "Dienstleistungen", nav_tarifs: "Preise", nav_goodies: "Shop", nav_leadership: "Der Gründer", nav_livres: "Bücher", nav_avis: "Bewertungen",
-                badge_top: "Cinematografische Exzellenz & Absolute Souveränität",
-                main_title: "Das Visuelle Arsenal, das die Konkurrenz zerschlägt",
-                main_desc: "Wenden Sie die 80/20-Regel an: Eliminieren Sie Lärm und konvertieren Sie Leads.",
+                nav_home: "Startseite", nav_services: "Dienstleistungen", nav_tarifs: "Preise", nav_goodies: "Shop", nav_leadership: "Der Gründer", nav_livres: "Bücher", nav_avis: "Bewertungen", nav_contact: "Kontakt",
+                badge_top: "Internationale Audiovisuelle Produktion",
+                main_title_1: "Eine Vision", main_title_2: "Ohne Grenzen",
+                main_desc: "Wir verwandeln Markenambitionen in kinematografische Erzählungen, die reisen, bewegen und bleiben.",
                 cta_main: "Sichern Sie sich Ihre Führungsposition",
                 whatsapp_text: "Mit Daia chatten",
+                showreel_btn: "Showreel ansehen",
                 srv_title: "Audiovisuelle Technik & Growth Funnels", srv_desc: "Wir entwerfen kinematografische Manifeste und mehrsprachige Verkaufstrichter.",
                 tarifs_title: "Investition & Souveränität", tarifs_desc: "Keine Kompromisse. Elitelösungen für absolute Exzellenz.", tarifs_cta: "Strategische Sitzung buchen",
                 goodies_title: "Shop & Limitierte Editionen", goodies_desc: "Exklusives Zubehör im DCC Production Design.",
@@ -258,27 +341,29 @@
                 footer_legal: "Impressum", footer_rgpd: "Datenschutz (DSGVO)", footer_cgv: "AGB"
             },
             pt: {
-                nav_home: "Início", nav_services: "Serviços", nav_tarifs: "Preços", nav_goodies: "Loja", nav_leadership: "O Fundador", nav_livres: "Livros", nav_avis: "Avaliações",
-                badge_top: "Excelência Cinematográfica & Soberania Absoluta",
-                main_title: "O Arsenal Visual Que Esmaga a Concorrência",
-                main_desc: "Aplique a regra 80/20: elimine o ruído e converta potenciais clientes através de funis automatizados.",
+                nav_home: "Início", nav_services: "Serviços", nav_tarifs: "Preços", nav_goodies: "Loja", nav_leadership: "O Fundador", nav_livres: "Livros", nav_avis: "Avaliações", nav_contact: "Fale Conosco",
+                badge_top: "Produção Audiovisual Internacional",
+                main_title_1: "Uma visão", main_title_2: "Sem fronteiras",
+                main_desc: "Transformamos ambições de marca em narrativas cinematográficas capazes de viajar, emocionar e permanecer.",
                 cta_main: "Garantir a Sua Posição de Líder",
                 whatsapp_text: "Conversar com Daia",
+                showreel_btn: "Ver Showreel",
                 srv_title: "Engenharia Audiovisual & Growth Tunnels", srv_desc: "Criamos manifestos cinematográficos e funis de vendas multilingues com inteligência artificial.",
                 tarifs_title: "Investimento & Soberania", tarifs_desc: "Sem compromissos. Soluções de elite para excelência absoluta.", tarifs_cta: "Reservar Sessão Estratégica",
                 goodies_title: "Loja & Edições Limitadas", goodies_desc: "Acessórios e equipamentos exclusivos DCC Production.",
                 lead_title: "O Fundador - Visão & Estratégia", lead_desc: "Direção estratégica sem concessões.",
                 books_title: "Publicações Internacionais", books_desc: "Descubra os livros de referência e edições globais na Amazon.",
                 avis_title: "Testemunhos de Líderes", avis_desc: "Impacto imediato no crescimento.",
-                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidade (RGPD)", footer_cgv: "Termos de Venda (CGV)"
+                footer_legal: "Aviso Legal", footer_rgpd: "Política de Privacidade (RGPD)", footer_cgv: "Termos de Venta (CGV)"
             },
             it: {
-                nav_home: "Home", nav_services: "Servizi", nav_tarifs: "Tariffe", nav_goodies: "Negozio", nav_leadership: "Il Fondatore", nav_livres: "Libri", nav_avis: "Recensioni",
-                badge_top: "Eccellenza Cinematografica & Sovranità Assoluta",
-                main_title: "L'Arsenale Visivo Che Schiaccia La Concorrenza",
-                main_desc: "Applica la regola 80/20: elimina il rumore e converti contatti ad alto potenziale.",
+                nav_home: "Home", nav_services: "Servizi", nav_tarifs: "Tariffe", nav_goodies: "Negozio", nav_leadership: "Il Fondatore", nav_livres: "Libri", nav_avis: "Recensioni", nav_contact: "Parliamo",
+                badge_top: "Produzione Audiovisiva Internazionale",
+                main_title_1: "Una visione", main_title_2: "Senza frontiere",
+                main_desc: "Trasformiamo le ambizioni di marca in racconti cinematografici capaci di viaggiare, emozionare e durare.",
                 cta_main: "Assicura la tua posizione di leadership",
                 whatsapp_text: "Chatta con Daia",
+                showreel_btn: "Guarda il Showreel",
                 srv_title: "Ingegneria Audiovisiva & Growth Tunnels", srv_desc: "Progettiamo manifesti cinematografici e funnel di vendita multilingue.",
                 tarifs_title: "Investimento & Sovranità", tarifs_desc: "Soluzioni d'élite per un'eccellenza assoluta.", tarifs_cta: "Prenota la tua sessione strategica",
                 goodies_title: "Negozio & Edizioni Limitate", goodies_desc: "Accessori e attrezzature esclusive DCC Production.",
@@ -288,12 +373,13 @@
                 footer_legal: "Note Legali", footer_rgpd: "Privacy Policy (GDPR)", footer_cgv: "Condizioni di Vendita (CGV)"
             },
             ja: {
-                nav_home: "ホーム", nav_services: "サービス", nav_tarifs: "料金", nav_goodies: "ショップ", nav_leadership: "創設者", nav_livres: "書籍", nav_avis: "お客様の声",
-                badge_top: "映画の卓越性と絶対的な主権",
-                main_title: "競合を圧倒するビジュアルアーセナル",
-                main_desc: "80/20の法則を適用し、ノイズを排除して見込み客を自動ファネルでコンバージョン。",
+                nav_home: "ホーム", nav_services: "サービス", nav_tarifs: "料金", nav_goodies: "ショップ", nav_leadership: "創設者", nav_livres: "書籍", nav_avis: "お客様の声", nav_contact: "お問い合わせ",
+                badge_top: "国際映像制作",
+                main_title_1: "ビジョン", main_title_2: "国境を越えて",
+                main_desc: "ブランドの野望を、旅し、感動させ、心に残る映画のような物語へと昇華させます。",
                 cta_main: "リーダーの地位を確保する",
                 whatsapp_text: "Daiaとチャット",
+                showreel_btn: "ショーリールを見る",
                 srv_title: "映像エンジニアリング ＆ グロースファネル", srv_desc: "AIを活用した多言語セールスファネルを構築します。",
                 tarifs_title: "投資と主権", tarifs_desc: "妥協のないエリート向けソリューション。", tarifs_cta: "戦略セッションを予約する",
                 goodies_title: "ショップ ＆ 限定版", goodies_desc: "DCC Production公式限定アクセサリ。",
