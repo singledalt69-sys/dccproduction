@@ -78,6 +78,70 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
         }
 
+        /* Conteneur spécifique pour le format Short vertical */
+        .short-container {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 30px rgba(229, 9, 20, 0.25);
+            background: #000;
+        }
+
+        .short-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Grille des logos clients */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+            margin-top: 15px;
+        }
+
+        .client-logo-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            padding: 15px;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo-box:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .client-logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0.8);
+            transition: filter 0.3s ease;
+        }
+
+        .client-logo-box:hover img {
+            filter: grayscale(0%) brightness(1);
+        }
+
         .u-footer {
             background-color: #0d0d0d !important;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -97,15 +161,15 @@
                 <div class="u-nav-container">
                     <ul class="u-nav u-unstyled" style="display: flex; gap: 20px;">
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="color: #FFF;">Accueil</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#projets" style="color: #FFF;">Projets</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#contact" style="color: #FFF;">Contact</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#clients" style="color: #FFF;">Références</a></li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#projets" style="color: #FFF;">Avis</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Section Principale : Vidéo en arrière-plan & Introduction -->
+    <!-- Section Principale : YouTube Short & Introduction -->
     <section class="u-clearfix" id="carousel-video" style="padding: 40px 0;">
         <div class="u-clearfix u-sheet" style="text-align: center;">
             <div class="custom-card" style="margin-bottom: 30px;">
@@ -114,31 +178,59 @@
                 <p style="font-size: 10pt; color: #CCCCCC; line-height: 1.4; font-weight: 300; max-width: 800px; margin: 0 auto;">Stratégie, production cinématographique et expansion internationale pour dominer vos marchés.</p>
             </div>
 
-            <div id="video-container" style="max-width: 900px; margin: 0 auto; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 0 30px rgba(229, 9, 20, 0.2);">
-                <video autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
-                    <source src="images/intro-dcc.mp4" type="video/mp4">
-                </video>
+            <!-- Intégration propre du Short YouTube -->
+            <div class="short-container">
+                <iframe src="https://www.youtube.com/embed/-3AIXoNUKgE?autoplay=1&mute=1&loop=1&playlist=-3AIXoNUKgE" title="DCC Production Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Références & Logos Clients -->
+    <section class="u-clearfix" id="clients" style="padding: 20px 0 40px 0;">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
+            <div class="custom-card">
+                <h2 style="text-align: center; font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;" class="gold-accent">Ils font confiance à notre expertise</h2>
+                
+                <div class="clients-grid">
+                    <!-- Canal+ -->
+                    <div class="client-logo-box">
+                        <img src="images/clients/images.png" alt="Canal+">
+                    </div>
+                    <!-- France Télévisions -->
+                    <div class="client-logo-box">
+                        <img src="images/clients/images1.png" alt="France Télévisions">
+                    </div>
+                    <!-- SFR -->
+                    <div class="client-logo-box">
+                        <img src="images/clients/tlchargement2.png" alt="SFR">
+                    </div>
+                    <!-- Gîtes de France -->
+                    <div class="client-logo-box">
+                        <img src="images/clients/tlchargement3.png" alt="Gîtes de France">
+                    </div>
+                    <!-- SNOF -->
+                    <div class="client-logo-box">
+                        <img src="images/clients/tlchargement8.jpg" alt="SNOF">
+                    </div>
+                    <!-- Mister France -->
+                    <div class="client-logo-box">
+                        <img src="images/clients/tlchargement9.jpg" alt="Mister France">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Section Flux d'actualités / Avis (Feedwind & Elfsight) -->
-    <section class="u-clearfix" id="projets" style="padding: 40px 0;">
+    <section class="u-clearfix" id="projets" style="padding: 20px 0 40px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 25px;" class="gold-accent">Nos Réalisations & Retours</h2>
+            <h2 style="text-align: center; font-size: 16pt; font-weight: 800; text-transform: uppercase; margin-bottom: 25px;" class="gold-accent">Avis & Retours</h2>
             
             <div class="custom-card">
                 <!-- Intégration widget avis clients -->
                 <div class="u-preserve-proportions u-widget-elfsight">
                     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
                     <div class="elfsight-app-google-reviews-placeholder"></div>
-                </div>
-            </div>
-            
-            <div class="custom-card" style="margin-top: 20px;">
-                <!-- Intégration flux d'actualités -->
-                <div class="u-feedwind-container">
-                    <script type="text/javascript" src="https://feed.mikle.com/js/feedwind-widget.js" defer></script>
                 </div>
             </div>
         </div>
