@@ -145,6 +145,22 @@
             font-weight: bold;
         }
 
+        .music-title {
+            font-size: 7pt;
+            color: #CCCCCC;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Container YouTube caché */
+        #youtube-player {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .audio-player-container {
                 bottom: 90px;
@@ -153,6 +169,10 @@
             }
 
             .volume-control {
+                display: none;
+            }
+
+            .music-title {
                 display: none;
             }
         }
@@ -165,18 +185,18 @@
         <button class="audio-player-btn" id="playPauseBtn" title="Lire/Arrêter la musique">
             <span id="playPauseIcon">🔊</span>
         </button>
+        <div class="music-title" id="musicTitle">DCC Production Theme</div>
         <div class="volume-control">
             <span class="volume-label">Volume</span>
             <input type="range" id="volumeSlider" min="0" max="100" value="50" title="Ajuster le volume">
         </div>
     </div>
 
-    <!-- Audio Element -->
-    <audio id="backgroundMusic" preload="auto">
-        <source src="audio/dcc-production-theme.mp3" type="audio/mpeg">
-        <source src="audio/dcc-production-theme.ogg" type="audio/ogg">
-        Votre navigateur ne supporte pas l'élément audio.
-    </audio>
+    <!-- YouTube IFrame API Container -->
+    <div id="youtube-player"></div>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     
     <!-- En-tête / Header -->
     <header class="u-clearfix u-header u-sticky" id="sec-header">
@@ -277,64 +297,122 @@
         document.getElementById("whatsapp-link").href = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
     </script>
 
-    <!-- Audio Player Script -->
+    <!-- YouTube Audio Player Script -->
     <script>
-        const audio = document.getElementById('backgroundMusic');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const playPauseIcon = document.getElementById('playPauseIcon');
+        let player;
+        let isPlayerReady = false;
+        const YOUTUBE_VIDEO_ID = 'TEByHpEmaug'; // ID de la vidéo YouTube Music
 
-        // Fonction pour démarrer la musique (nécessite interaction utilisateur)
-        function startMusic() {
-            audio.volume = 0.5;
-            audio.play().catch(err => {
-                console.log('Autoplay bloqué. L\'utilisateur doit interagir pour lancer la musique.');
+        // Créer le player YouTube
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '0',
+                width: '0',
+                videoId: YOUTUBE_VIDEO_ID,
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                },
+                playerVars: {
+                    'controls': 0,
+                    'disablekb': 1,
+                    'fs': 0,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'showinfo': 0,
+                    'iv_load_policy': 3
+                }
             });
-            updatePlayButton();
+        }
+
+        // Quand le player est prêt
+        function onPlayerReady(event) {
+            isPlayerReady = true;
+            // Tenter de lancer la musique automatiquement
+            playMusic();
+        }
+
+        // Gestion des changements d'état du player
+        function onPlayerStateChange(event) {
+            const playPauseIcon = document.getElementById('playPauseIcon');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            
+            if (event.data == YT.PlayerState.PLAYING) {
+                playPauseIcon.textContent = '⏸️';
+                playPauseBtn.classList.add('playing');
+            } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+                playPauseIcon.textContent = '🔊';
+                playPauseBtn.classList.remove('playing');
+            }
+
+            // Relancer la musique si elle s'est terminée
+            if (event.data == YT.PlayerState.ENDED) {
+                player.seekTo(0);
+                player.playVideo();
+            }
+        }
+
+        // Fonction pour lancer la musique
+        function playMusic() {
+            if (isPlayerReady && player) {
+                try {
+                    player.playVideo();
+                    updatePlayButton();
+                } catch (err) {
+                    console.log('Autoplay bloqué. L\'utilisateur doit interagir pour lancer la musique.');
+                }
+            }
         }
 
         // Gestion du bouton Play/Pause
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
+        document.getElementById('playPauseBtn').addEventListener('click', () => {
+            if (!isPlayerReady) return;
+            
+            if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+                player.pauseVideo();
             } else {
-                audio.pause();
+                player.playVideo();
             }
             updatePlayButton();
         });
 
         // Gestion du contrôle de volume
-        volumeSlider.addEventListener('input', (e) => {
-            audio.volume = e.target.value / 100;
+        document.getElementById('volumeSlider').addEventListener('input', (e) => {
+            if (isPlayerReady && player) {
+                player.setVolume(e.target.value);
+            }
         });
 
         // Mise à jour de l'icône du bouton
         function updatePlayButton() {
-            if (audio.paused) {
-                playPauseIcon.textContent = '🔇';
-                playPauseBtn.classList.remove('playing');
-            } else {
-                playPauseIcon.textContent = '⏸️';
-                playPauseBtn.classList.add('playing');
+            const playPauseIcon = document.getElementById('playPauseIcon');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            
+            if (isPlayerReady && player) {
+                if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+                    playPauseIcon.textContent = '⏸️';
+                    playPauseBtn.classList.add('playing');
+                } else {
+                    playPauseIcon.textContent = '🔊';
+                    playPauseBtn.classList.remove('playing');
+                }
             }
         }
 
-        // Tenter de démarrer la musique au chargement (autoplay peut être bloqué)
-        window.addEventListener('load', () => {
-            startMusic();
-        });
-
-        // Permettre à l'utilisateur de démarrer la musique au premier clic
+        // Permettre à l'utilisateur de démarrer la musique au premier clic si autoplay échoue
         document.addEventListener('click', () => {
-            if (audio.paused) {
-                startMusic();
+            if (isPlayerReady && player && player.getPlayerState() !== YT.PlayerState.PLAYING) {
+                playMusic();
             }
         }, { once: true });
 
-        // Gestion de la fin de la musique (loop automatique)
-        audio.addEventListener('ended', () => {
-            audio.currentTime = 0;
-            audio.play();
+        // Initialiser le volume par défaut
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (isPlayerReady && player) {
+                    player.setVolume(50);
+                }
+            }, 1000);
         });
     </script>
 
