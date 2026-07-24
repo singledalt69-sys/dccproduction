@@ -83,6 +83,66 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Styles pour l'overlay de démarrage vidéo */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-overlay-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #youtube-video-overlay {
+            width: 100%;
+            height: 100%;
+        }
+
+        .skip-button {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgba(212, 175, 55, 0.9);
+            border: 1px solid #D4AF37;
+            color: #111111;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 9pt;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .skip-button:hover {
+            background-color: #E50914;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
         /* Audio Player Styles */
         .audio-player-container {
             position: fixed;
@@ -175,11 +235,26 @@
             .music-title {
                 display: none;
             }
+
+            .skip-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                font-size: 8pt;
+            }
         }
     </style>
 </head>
 <body class="u-body u-xl-mode" data-lang="fr">
     
+    <!-- Overlay Vidéo de Démarrage -->
+    <div class="video-overlay" id="videoOverlay">
+        <div class="video-overlay-container">
+            <div id="youtube-video-overlay"></div>
+        </div>
+        <button class="skip-button" id="skipButton" title="Passer la vidéo">Passer ▶</button>
+    </div>
+
     <!-- Audio Player -->
     <div class="audio-player-container" id="audioPlayerContainer">
         <button class="audio-player-btn" id="playPauseBtn" title="Lire/Arrêter la musique">
@@ -191,9 +266,6 @@
             <input type="range" id="volumeSlider" min="0" max="100" value="50" title="Ajuster le volume">
         </div>
     </div>
-
-    <!-- YouTube IFrame API Container -->
-    <div id="youtube-player"></div>
 
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -297,21 +369,47 @@
         document.getElementById("whatsapp-link").href = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
     </script>
 
-    <!-- YouTube Audio Player Script -->
+    <!-- YouTube Intro Video & Background Music Script -->
     <script>
-        let player;
-        let isPlayerReady = false;
-        const YOUTUBE_VIDEO_ID = 'TEByHpEmaug'; // ID de la vidéo YouTube Music
+        let introPlayer;
+        let musicPlayer;
+        let isIntroPlayerReady = false;
+        let isMusicPlayerReady = false;
 
-        // Créer le player YouTube
+        const INTRO_VIDEO_ID = 'OcLSbdNf0mU'; // Vidéo Shorts intro
+        const MUSIC_VIDEO_ID = 'TEByHpEmaug'; // Musique de fond
+
+        // Créer les players YouTube
         function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-player', {
+            // Player pour la vidéo intro
+            introPlayer = new YT.Player('youtube-video-overlay', {
+                height: '100%',
+                width: '100%',
+                videoId: INTRO_VIDEO_ID,
+                events: {
+                    'onReady': onIntroPlayerReady,
+                    'onStateChange': onIntroPlayerStateChange
+                },
+                playerVars: {
+                    'controls': 0,
+                    'disablekb': 1,
+                    'fs': 0,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'showinfo': 0,
+                    'iv_load_policy': 3,
+                    'autohide': 1
+                }
+            });
+
+            // Player pour la musique de fond (caché)
+            musicPlayer = new YT.Player('youtube-music-player', {
                 height: '0',
                 width: '0',
-                videoId: YOUTUBE_VIDEO_ID,
+                videoId: MUSIC_VIDEO_ID,
                 events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
+                    'onReady': onMusicPlayerReady,
+                    'onStateChange': onMusicPlayerStateChange
                 },
                 playerVars: {
                     'controls': 0,
@@ -325,18 +423,32 @@
             });
         }
 
-        // Quand le player est prêt
-        function onPlayerReady(event) {
-            isPlayerReady = true;
-            // Tenter de lancer la musique automatiquement
-            playMusic();
+        // Quand la vidéo intro est prête
+        function onIntroPlayerReady(event) {
+            isIntroPlayerReady = true;
+            introPlayer.playVideo();
         }
 
-        // Gestion des changements d'état du player
-        function onPlayerStateChange(event) {
+        // Gestion des changements d'état de la vidéo intro
+        function onIntroPlayerStateChange(event) {
+            // Quand la vidéo se termine
+            if (event.data == YT.PlayerState.ENDED) {
+                hideVideoOverlay();
+            }
+        }
+
+        // Quand la musique est prête
+        function onMusicPlayerReady(event) {
+            isMusicPlayerReady = true;
+            musicPlayer.setVolume(50);
+            musicPlayer.playVideo();
+        }
+
+        // Gestion des changements d'état de la musique
+        function onMusicPlayerStateChange(event) {
             const playPauseIcon = document.getElementById('playPauseIcon');
             const playPauseBtn = document.getElementById('playPauseBtn');
-            
+
             if (event.data == YT.PlayerState.PLAYING) {
                 playPauseIcon.textContent = '⏸️';
                 playPauseBtn.classList.add('playing');
@@ -347,49 +459,51 @@
 
             // Relancer la musique si elle s'est terminée
             if (event.data == YT.PlayerState.ENDED) {
-                player.seekTo(0);
-                player.playVideo();
+                musicPlayer.seekTo(0);
+                musicPlayer.playVideo();
             }
         }
 
-        // Fonction pour lancer la musique
-        function playMusic() {
-            if (isPlayerReady && player) {
-                try {
-                    player.playVideo();
-                    updatePlayButton();
-                } catch (err) {
-                    console.log('Autoplay bloqué. L\'utilisateur doit interagir pour lancer la musique.');
-                }
-            }
+        // Fonction pour masquer l'overlay vidéo
+        function hideVideoOverlay() {
+            const overlay = document.getElementById('videoOverlay');
+            overlay.classList.add('hidden');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
         }
 
-        // Gestion du bouton Play/Pause
+        // Bouton pour passer la vidéo
+        document.getElementById('skipButton').addEventListener('click', () => {
+            hideVideoOverlay();
+        });
+
+        // Gestion du bouton Play/Pause de la musique
         document.getElementById('playPauseBtn').addEventListener('click', () => {
-            if (!isPlayerReady) return;
+            if (!isMusicPlayerReady) return;
             
-            if (player.getPlayerState() === YT.PlayerState.PLAYING) {
-                player.pauseVideo();
+            if (musicPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+                musicPlayer.pauseVideo();
             } else {
-                player.playVideo();
+                musicPlayer.playVideo();
             }
-            updatePlayButton();
+            updateMusicPlayButton();
         });
 
         // Gestion du contrôle de volume
         document.getElementById('volumeSlider').addEventListener('input', (e) => {
-            if (isPlayerReady && player) {
-                player.setVolume(e.target.value);
+            if (isMusicPlayerReady && musicPlayer) {
+                musicPlayer.setVolume(e.target.value);
             }
         });
 
-        // Mise à jour de l'icône du bouton
-        function updatePlayButton() {
+        // Mise à jour de l'icône du bouton de musique
+        function updateMusicPlayButton() {
             const playPauseIcon = document.getElementById('playPauseIcon');
             const playPauseBtn = document.getElementById('playPauseBtn');
             
-            if (isPlayerReady && player) {
-                if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+            if (isMusicPlayerReady && musicPlayer) {
+                if (musicPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
                     playPauseIcon.textContent = '⏸️';
                     playPauseBtn.classList.add('playing');
                 } else {
@@ -399,22 +513,19 @@
             }
         }
 
-        // Permettre à l'utilisateur de démarrer la musique au premier clic si autoplay échoue
-        document.addEventListener('click', () => {
-            if (isPlayerReady && player && player.getPlayerState() !== YT.PlayerState.PLAYING) {
-                playMusic();
-            }
-        }, { once: true });
-
-        // Initialiser le volume par défaut
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                if (isPlayerReady && player) {
-                    player.setVolume(50);
+        // Permettre à l'utilisateur de passer la vidéo au clic
+        document.addEventListener('click', (e) => {
+            if (e.target.id !== 'skipButton' && !e.target.closest('.skip-button')) {
+                const overlay = document.getElementById('videoOverlay');
+                if (!overlay.classList.contains('hidden')) {
+                    hideVideoOverlay();
                 }
-            }, 1000);
+            }
         });
     </script>
+
+    <!-- Container pour le player de musique caché -->
+    <div id="youtube-music-player" style="display: none;"></div>
 
 </body>
 </html>
