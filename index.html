@@ -25,6 +25,7 @@
         "@type": "Corporation",
         "name": "DCC Production",
         "founder": "Sébastien Favette",
+        "email": "singledalt69@gmai.com",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "12 ter route de Bordeaux",
@@ -32,7 +33,8 @@
             "postalCode": "69670",
             "addressRegion": "Rhône",
             "addressCountry": "FR"
-        }
+        },
+        "taxID": "51870891200069"
     }
     </script>
 
@@ -274,6 +276,20 @@
         .u-footer {
             background-color: #0d0d0d !important;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #CCCCCC;
+            padding: 40px 20px;
+            font-size: 9pt;
+        }
+
+        .u-footer a {
+            color: #D4AF37;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .u-footer a:hover {
+            color: #FFF;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -316,7 +332,6 @@
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#livres" style="color: #D4AF37;">Livres & Amazon</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#clients" style="color: #FFF;">Références</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#avis" style="color: #FFF;">Avis</a></li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#goodies" style="color: #D4AF37;">Goodies</a></li>
                     </ul>
                 </div>
             </nav>
@@ -389,7 +404,7 @@
             <div class="custom-card">
                 <h2 style="font-size: 14pt; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; text-align: center;" class="gold-accent">Nos Niveaux de Performance (Tarifs HT)</h2>
                 <p style="font-size: 9pt; color: #CCCCCC; text-align: center; margin-bottom: 20px;">
-                    Cliquez sur l'offre de votre choix pour valider votre sélection directement avec Daia.
+                    Cliquez sur l'offre de votre choix pour valider votre sélection directement avec Daia. Validation soumise à nos <a href="https://drive.google.com/file/d/18vIh3Y1ro3Usau7TFEhPS1lwRV9grRuT/view?usp=drive_link" target="_blank" style="color: #D4AF37; text-decoration: underline;">CGV</a>.
                 </p>
 
                 <table class="pricing-table">
@@ -513,10 +528,20 @@
         </div>
     </section>
 
-    <!-- Section Feedwind & Flux Social -->
+    <!-- Section Flux Social (Sécurisée contre l'erreur 500) -->
     <section class="u-clearfix" id="feed" style="padding: 20px 0;">
         <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Chargement" data-fw-param="178540/"></script>
+            <div id="feedwind-container" style="min-height: 100px;">
+                <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Chargement" data-fw-param="178540/"></script>
+            </div>
+            <script>
+                setTimeout(function() {
+                    const container = document.getElementById('feedwind-container');
+                    if (container && container.innerHTML.includes('500: error') || container.innerHTML.trim() === '') {
+                        container.style.display = 'none';
+                    }
+                }, 3000);
+            </script>
         </div>
     </section>
 
@@ -557,65 +582,24 @@
                 <!-- Appel à l'action closing -->
                 <div style="margin-top: 20px;">
                     <p style="font-size: 10pt; font-weight: 600; margin-bottom: 10px;">Prêt à passer au niveau supérieur ? Discutons de votre projet.</p>
-                    <p style="font-size: 9pt; color: #CCCCCC; margin-bottom: 15px;">La première étape vers votre réussite est offerte. Décrivez votre ambition et recevez un audit de faisabilité personnalisé.</p>
+                    <p style="font-size: 9pt; color: #CCCCCC; margin-bottom: 15px;">Devis et audit sous 24h, sans engagement, confidentialité garantie.</p>
                     <a href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20lancer%20mon%20projet%20avec%20DCC%20Production%20et%20bénéficier%20de%20mon%20audit%20stratégique." target="_blank" class="closing-btn">Lancer votre projet avec Daia</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Goodies & Univers DCC Production (Spreadshop) -->
-    <section class="u-clearfix" id="goodies" style="padding: 20px 0 40px 0;">
-        <div class="u-clearfix u-sheet" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <div class="custom-card" style="padding: 40px 20px;">
-                <span style="display: inline-block; background-color: rgba(212, 175, 55, 0.1); border: 1px solid #D4AF37; color: #D4AF37; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 50px; margin-bottom: 15px;">Expansion Officielle</span>
-                <h2 style="font-size: 18pt; font-weight: 900; text-transform: uppercase; margin-bottom: 10px;" class="gold-accent">Goodies & Univers DCC Production</h2>
-                <p style="font-size: 9.5pt; color: #CCCCCC; margin-bottom: 30px;">Propriété exclusive, accessoires et pièces de collection de l'écurie. Portez les couleurs du manifeste.</p>
-                
-                <!-- Conteneur Spreadshop -->
-                <div id="myShop" style="width: 100%;">
-                    <a href="https://dccproduction.myspreadshop.fr" style="color: #D4AF37; text-decoration: none;">dccproduction</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scripts Spreadshop -->
-    <script>
-        var spread_shop_config = {
-            shopName: 'dccproduction',
-            locale: 'fr_FR',
-            prefix: 'https://dccproduction.myspreadshop.fr',
-            baseId: 'myShop'
-        };
-    </script>
-    <script type="text/javascript" src="https://dccproduction.myspreadshop.fr/shopfiles/shopclient/shopclient.nocache.js"></script>
-
-    <!-- Pied de page / Footer -->
-    <footer class="u-align-center u-clearfix u-footer" style="padding: 25px 0; text-align: center;">
-        <div class="u-clearfix u-sheet">
-            <p style="font-size: 8pt; color: #888888; letter-spacing: 1px; margin-bottom: 5px;">
-                © 2026 DCC PROD. Todos los derechos reservados.
-            </p>
-            <p style="font-size: 8pt; color: #AAAAAA; letter-spacing: 0.5px; margin-bottom: 10px;">
-                📍 12 ter route de Bordeaux, 69670 Vaugneray | Microempresa – SIRET en cours de matriculation
-            </p>
-            <p style="font-size: 7.5pt; color: #E50914; font-weight: 700; text-transform: uppercase; margin: 0;">
-                DCC PRODUCTION, le seul réflexe...
+    <!-- Footer -->
+    <footer class="u-clearfix u-footer" id="sec-footer">
+        <div class="u-clearfix u-sheet" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 10px;">© 2026 DCC Production - Tous droits réservés. Direction : Sébastien Favette.</p>
+            <p style="font-size: 8pt; color: #777777; margin-bottom: 8px;">Siège social : 12 ter route de Bordeaux, 69670 Vaugneray - Rhône - France | SIRET : 51870891200069 | Contact : <a href="mailto:singledalt69@gmai.com" style="color: #A0A0A0;">singledalt69@gmai.com</a></p>
+            <p style="font-size: 8pt; color: #D4AF37; margin-top: 5px;">
+                <a href="https://drive.google.com/file/d/18vIh3Y1ro3Usau7TFEhPS1lwRV9grRuT/view?usp=drive_link" target="_blank" style="color: #D4AF37; margin: 0 10px;">CGV (Conditions Générales de Vente)</a> | 
+                <a href="#confidentialite" style="color: #D4AF37; margin: 0 10px;">Mentions Légales & RGPD</a>
             </p>
         </div>
     </footer>
-
-    <!-- Widget WhatsApp Flottant Global -->
-    <div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-        <a id="whatsapp-link" href="https://wa.me/33667400199?text=Bonjour%20Daia,%20je%20souhaite%20en%20savoir%20plus%20sur%20les%20services%20de%20DCC%20Production%20et%20obtenir%20un%20devis." target="_blank" rel="noopener noreferrer"
-           style="background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); border: 1px solid rgba(255,255,255,0.2);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-right: 8px;">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.933-11.891 3.181-.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.934 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            Discuter avec Daia
-        </a>
-    </div>
 
 </body>
 </html>
